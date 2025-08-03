@@ -1,5 +1,5 @@
 <div id="account-content" class="ui grid wrap-item">
-@forelse ($listAccount as $item)
+@forelse ($accountList as $item)
     <div class="sixteen wide mobile eight wide tablet four wide computer column cursor-pointer" style="cursor: pointer;" onclick="window.open('/mua-acc-{{ $item->acc_id }}.html','_blank')">
         <div class="ui item" id="get-type-account" data-type-filter="{{$item->type_account}}">
             <div class="item__header">
@@ -64,8 +64,9 @@
 
 <div id="menu-content">
     <div class="wrap-paginate">
-        {{$listAccount->links()}}
+        {{$accountList->links()}}
     </div>
+</div>
 </div>
 
 <script type="text/javascript">
@@ -77,19 +78,21 @@
     });
         
     function fetch_data(page){
-        ajaxSetup();
-        $.ajax({
-            type: 'POST',
-            url: "/account/fetch_data?page="+ page,
-            data: { type: 1},
-            success: function(responseData) {
-                $('.account-content').html(responseData);
-                loading('hide');
-            },
-            error: function(error) {
-            toastr.error(error);
-            loading('hide');
-            }
-        });
+
+        console.log('11111111111111111')
+        // ajaxSetup();
+        // $.ajax({
+        //     type: 'POST',
+        //     url: "/account/load_account_list2?page="+ page,
+        //     data: { type: 1},
+        //     success: function(responseData) {
+        //         $('#account-content').html(responseData);
+        //         loading('hide');
+        //     },
+        //     error: function(error) {
+        //     toastr.error(error);
+        //     loading('hide');
+        //     }
+        // });
     }
 </script>

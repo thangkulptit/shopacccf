@@ -59,40 +59,38 @@ class HomeController extends Controller
 
     public function loadAccountList2(Request $req) {
         $sPrice = $req->get('price');
-        $sServer = $req->get('server');
         $sSect = $req->get('sect');
         $sAcc_id = $req->get('id');
         $sLevel = $req->get('level');
-        $sType = $req->get('loai');
+        $sType = $req->get('type');
         $sSort = $req->get('sort');
+        $vip_name = $req->get('vip_name');
+        $vip_level = $req->get('vip_level');
         $orderByStr = $this->getStringOrder($sSort);
 
         $acc = DB::table('accounts')
-            ->join('servers', 'accounts.server', '=', 'servers.server_id')
-            ->join('sects', 'accounts.sect', '=', 'sects.sect_id')
             ->where(['accounts.type_account' => $sType, 'status' => 1])
             ->orderBy($orderByStr[0],$orderByStr[1])
             ->when($sPrice, function($query, $sPrice) {
                 $priceList = $this->convertPriceSearch($sPrice);
                 return $query->where('price','>=', $priceList[0])->where('price','<=', $priceList[1]);
             })
-            ->when($sServer, function($query, $sServer) {
-                return $query->where(['server' => $sServer]);
+            ->when($vip_name, function($query, $vip_name) {
+                return $query->where(['vip_name' => $vip_name]);
             })
-            ->when($sSect, function($query, $sSect) {
-                return $query->where(['sect' => $sSect]);
-            })
-            ->when($sLevel, function($query, $sLevel) {
-                $levelList = $this->convertLevelNinjaSearch($sLevel);
-                return $query->where('level','>=', $levelList[0])->where('level','<=', $levelList[1]);
+            ->when($vip_level, function($query, $vip_level) {
+                dd($vip_level);
+                return $query->where(['vip_level' => $vip_level]);
             })
             ->when($sAcc_id, function($query, $sAcc_id) {
                 return $query->where(['acc_id' => $sAcc_id]);
             })
             ->paginate(15);
         $acc = $this->getBackgroundAccount($acc);
+
         $data['accountList'] = $acc;
         $pathView = $this->getPathViewWhenFetchAccount($sType);
+
         return view($pathView, $data);
     }
 
@@ -118,25 +116,25 @@ class HomeController extends Controller
                 $price1 = 50000;
                 $price2 = 100000;
             break;
-            case '100k-300k':
+            case '100k-500k':
                 $price1 = 100000;
-                $price2 = 300000;
-            break;
-            case '300k-500k':
-                $price1 = 300000;
                 $price2 = 500000;
             break;
-            case '500k-1000k':
-                $price1 = 500000;
-                $price2 = 1000000;
-            break;
-            case '1000k-2000k':
+            case '1tr-5tr':
                 $price1 = 1000000;
-                $price2 = 2000000;
+                $price2 = 5000000;
             break;
-            case '>2000k':
-                $price1 = 2000000;
-                $price2 = 100000000;
+            case '5tr-10tr':
+                $price1 = 5000000;
+                $price2 = 10000000;
+            break;
+            case '10tr-15tr':
+                $price1 = 10000000;
+                $price2 = 15000000;
+            break;
+            case '15tr-20tr':
+                $price1 = 15000000;
+                $price2 = 20000000;
             break;
             default:
             break;
@@ -200,12 +198,12 @@ class HomeController extends Controller
     }
 
     public function getViewHome(){
-        $acc = Account::where(['type_account' => 2, 'status' => 1])
+        $acc = Account::where(['type_account' => 1, 'status' => 1])
         ->orderBy('acc_id', 'desc')
         ->paginate(16);
         // $acc = Account::paginate(16);
         $accimg = Common::getImagesAll($acc);
-        $data['listAccount'] = Common::filterRankAll($acc);
+        $data['accountList'] = Common::filterRankAll($acc);
         return view('frontend/index', $data);
     }
 
@@ -214,7 +212,7 @@ class HomeController extends Controller
         ->orderBy('acc_id', 'desc')
         ->paginate(16);
         $accimg = Common::getImagesAll($acc);
-        $data['listAccount'] = Common::filterRankAll($acc);
+        $data['accountList'] = Common::filterRankAll($acc);
         return view('frontend/shop-lien-quan', $data);
     }
 
@@ -231,7 +229,7 @@ class HomeController extends Controller
         ->orderBy('acc_id', 'desc')
         ->paginate(16);
         $accimg = Common::getImagesAll($acc);
-        $data['listAccount'] = Common::filterRankAll($acc);
+        $data['accountList'] = Common::filterRankAll($acc);
         return view('frontend/shop-korea', $data);
     }
     public function getViewShopCF() {
@@ -239,7 +237,7 @@ class HomeController extends Controller
         ->orderBy('acc_id', 'desc')
         ->paginate(16);
         $accimg = Common::getImagesAll($acc);
-        $data['listAccount'] = Common::filterRankAll($acc);
+        $data['accountList'] = Common::filterRankAll($acc);
         return view('frontend/shop-cf', $data);
     }
     public function getViewShopPubgMobile() {

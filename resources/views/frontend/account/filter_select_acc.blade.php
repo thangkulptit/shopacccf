@@ -90,15 +90,15 @@
             <i class="dropdown icon"></i>
             <div class="default text">Không Chọn</div>
             <div class="menu">
-                <div class="item" data-value="1">
+                <div class="item" data-value="acc-moi-dang">
                     <div class="ui pink empty circular label"></div>
                     Acc mới đăng
                 </div>
-                <div class="item" data-value="4">
+                <div class="item" data-value="gia-cao-nhat">
                     <div class="ui green empty circular label"></div>
                     Giá cao nhất
                 </div>
-                <div class="item" data-value="5">
+                <div class="item" data-value="gia-thap-nhat">
                     <div class="ui grey empty circular label"></div>
                     Giá rẻ nhất
                 </div>
@@ -155,7 +155,7 @@
           price: priceRange,
           sort: specialFilter,
           vip_name: vipName,
-          acc_id: accId,
+          id: accId,
           type: type,
         };
 

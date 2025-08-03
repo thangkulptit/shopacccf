@@ -63,6 +63,7 @@ Route::group(['namespace'=>'front'], function(){
             Route::post('/fetch_data', 'HomeController@fetchDataAccount');
             Route::post('/buy', 'HomeController@buyAccount');
             Route::post('/load_account_list', 'HomeController@loadAccountList');
+            Route::post('/load_account_list2', 'HomeController@loadAccountList2');
 
             Route::post('/buy_acc_random', 'HomeController@buyAccountRandom');
             
