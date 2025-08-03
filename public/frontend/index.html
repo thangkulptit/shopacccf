@@ -1,0 +1,2378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://shopdaxua.vn/frontend/bower_components/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://shopdaxua.vn/frontend/bower_components/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://shopdaxua.vn/frontend/bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://shopdaxua.vn/frontend/bower_components/toastr/toastr.css">
+    <link rel="stylesheet" type="text/css" href="https://shopdaxua.vn/frontend/assets/css/style.css">
+    <link rel="shortcut icon" type="image/png" href="https://shopdaxua.vn/frontend/assets/imgs/yasui-removebg.ico" />
+</head>
+
+<body>
+    <header class="shopdaxuaHeader">
+        <div class="social">
+            <div class="social__left">
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-twitter-square"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+            </div>
+            <div id="social__right" class="social__right">
+                <a href="https://shopdaxua.vn/profile"><i class="fas fa-user-circle"></i>Tài Khoản Của Tôi</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="navigation__left">
+                <div class="logo">
+                    <a href="https://shopdaxua.vn"><img src="https://shopdaxua.vn/frontend/assets/imgs/logo.png"></a>
+                </div>
+                <div class="select" id="nav-select">
+                    <div class="text">
+                        <div class="text-1">
+                            <i class="fas fa-bars"></i>
+                            <span>Hướng Dẫn</span>
+                        </div>
+                        <div class="text-2">
+                            <span>Chọn Danh Mục</span>
+                            <i id="nav-updown" class="fas fa-caret-down"></i>
+                        </div>
+                    </div>
+                    <div class="game">
+                        <ul class="game__list">
+                            <li onclick="demo()" class="game__item" style="background-image: url('https://shopdaxua.vn/frontend/assets/imgs/dota2-gameSelector.png');">
+                                <div class="overlay">
+                                    Cách Mua Acc
+                                </div>
+                            </li>
+                            <li onclick="demo()" class="game__item" style="background-image: url('https://shopdaxua.vn/frontend/assets/imgs/csgo-gameSelector.png');">
+                                <div class="overlay">
+                                    Bảo Mật Tài Khoản
+                                </div>
+                            </li>
+                            <li onclick="demo()" class="game__item" style="background-image: url('https://shopdaxua.vn/frontend/assets/imgs/ow-gameSelector.png');">
+                                <div class="overlay">
+                                    Hướng Dẫn Nạp Thẻ
+                                </div>
+                            </li>
+                            <li onclick="demo()" class="game__item" style="background-image: url('https://shopdaxua.vn/frontend/assets/imgs/rl-gameSelector.png');">
+                                <div class="overlay">
+                                    Tìm Acc Mong Muốn
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation__right">
+                <div class="text-area">
+                    <a class="menu-item" href="https://shopdaxua.vn">Trang Chủ</a>
+                    <a class="menu-item" href="https://shopdaxua.vn/napthe">Nạp Thẻ</a>
+                    <a class="menu-item" href="https://shopdaxua.vn/contact">Liên Hệ</a>
+                </div>
+                <div class="button-area">
+                    <button onclick="callregisterform()" class="button-yellow">Đăng Kí</button>
+                    <button onclick="openmodal()" class="button-green">Đăng Nhập</button>
+                </div>
+
+                <div id="mobile-area" class="mobile-area">
+                    <i class="fas fa-bars"></i>
+                    <div class="ui left demo vertical inverted sidebar labeled icon menu">
+                        <a href="https://shopdaxua.vn" class="item">
+                            <i class="home icon"></i> Trang Chủ
+                        </a>
+                        <a href="https://shopdaxua.vn/napthe" class="item">
+                            <i class="block money icon"></i> Nạp Thẻ
+                        </a>
+
+                        <a onclick="openmodal()" class="item">
+                            <i class="sign-in icon"></i> Đăng Nhập
+                        </a>
+                        <a onclick="callregisterform()" class="item">
+                            <i class="laptop icon"></i> Đăng Kí
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <h1 class="shopdaxuaHeader__title">Shop Acc Liên Minh</h1>
+        <h2 class="shopdaxuaHeader__subtitle">Bán Vì Đam Mê Chứ Lời Lãi Gì Tầm Này !</h2>
+        <div class="shopdaxuaHeader__scroll">
+            <a class="scroll__item actived">
+                <img class="service1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMAQMAAACUDtN9AAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABlJREFUeNrtwTEBAAAAwqD1T20JT6AAAOBrCmQAAb3x7N4AAAAASUVORK5CYII=">
+                <div>Acc Liên Minh</div>
+            </a>
+            <a onclick="demo()" class="scroll__item">
+                <img class="service2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMAQMAAACUDtN9AAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABlJREFUeNrtwTEBAAAAwqD1T20JT6AAAOBrCmQAAb3x7N4AAAAASUVORK5CYII=">
+                <div>Acc Random 20k</div>
+            </a>
+            <a onclick="demo()" class="scroll__item">
+                <img class="service3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMAQMAAACUDtN9AAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABlJREFUeNrtwTEBAAAAwqD1T20JT6AAAOBrCmQAAb3x7N4AAAAASUVORK5CYII=">
+                <div>Acc Random 50k</div>
+            </a>
+
+        </div>
+
+    </header>
+
+    <section class="shopdaxuaAccount">
+        <div class="ui grid wrap-search">
+            <div class="sixteen wide mobile sixteen wide tablet three wide computer column">
+                <label class="label">Chọn rank</label>
+                <div id="rank" class="ui fluid selection dropdown">
+                    <input type="hidden" name="rank" />
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Không Chọn</div>
+                    <div class="menu">
+                        <div class="item" data-value="999">
+                            <img class="ui big avatar image" src="frontend/assets/imgs/rank/unranked.png" /> Chưa Rank
+                        </div>
+                        <div class="item" data-value="1">
+                            <img class="ui big avatar image" src="frontend/assets/imgs/rank-icon/ironi.png" /> Sắt
+                        </div>
+                        <div class="item" data-value="2">
+                            <img class="ui big avatar image" src="frontend/assets/imgs/rank-icon/bronzei.png" /> Đồng
+                        </div>
+                        <div class="item" data-value="3">
+                            <img class="ui big avatar image" src="frontend/assets/imgs/rank-icon/silveri.png" /> Bạc
+                        </div>
+                        <div class="item" data-value="4">
+                            <img class="ui big avatar image" src="frontend/assets/imgs/rank-icon/goldi.png" /> Vàng
+                        </div>
+                        <div class="item" data-value="5">
+                            <img class="ui big avatar image" src="frontend/assets/imgs/rank-icon/platinumi.png" /> Bạch Kim
+                        </div>
+                        <div class="item" data-value="6">
+                            <img class="ui big avatar image" src="frontend/assets/imgs/rank-icon/diamondi.png" /> Kim Cương
+                        </div>
+                        <div class="item" data-value="7">
+                            <img class="ui big avatar image" src="frontend/assets/imgs/rank-icon/master.png" /> Cao Thủ
+                        </div>
+                        <div class="item" data-value="8">
+                            <img class="ui big avatar image" src="frontend/assets/imgs/rank-icon/grandmaster.png" /> Đại Cao Thủ
+                        </div>
+                    </div>
+                </div>
+                <label class="label">Chọn Giá</label>
+                <div id="price" class="ui fluid selection dropdown">
+                    <input type="hidden" name="price" />
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Không Chọn</div>
+                    <div class="menu">
+                        <div class="item" data-value="10">
+                            10.000 đ
+                        </div>
+                        <div class="item" data-value="20">
+                            20.000 đ
+                        </div>
+                        <div class="item" data-value="30">
+                            30.000 đ
+                        </div>
+                        <div class="item" data-value="40">
+                            40.000 đ
+                        </div>
+                        <div class="item" data-value="50">
+                            50.000 đ
+                        </div>
+                        <div class="item" data-value="60">
+                            60.000 đ
+                        </div>
+                        <div class="item" data-value="70">
+                            70.000 đ
+                        </div>
+                        <div class="item" data-value="80">
+                            80.000 đ
+                        </div>
+                        <div class="item" data-value="90">
+                            90.000 đ
+                        </div>
+                        <div class="item" data-value="100">
+                            100.000 đ
+                        </div>
+                        <div class="item" data-value="100300">
+                            100k đến 300k
+                        </div>
+                        <div class="item" data-value="300500">
+                            300k đến 500k
+                        </div>
+                        <div class="item" data-value="5001000">
+                            500k đến 1 triệu
+                        </div>
+                        <div class="item" data-value="1000">
+                            trên 1 triệu
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sixteen wide mobile sixteen wide tablet three wide computer column">
+                <label class="label">Chọn Khung</label>
+                <div id="khung" class="ui fluid selection dropdown">
+                    <input type="hidden" name="khung" />
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Không Chọn</div>
+                    <div class="menu">
+                        <div class="item" data-value="1">
+                            Khung Thách Đấu
+                        </div>
+                        <div class="item" data-value="2">
+                            Khung Đại Cao Thủ
+                        </div>
+                        <div class="item" data-value="3">
+                            Khung Cao Thủ
+                        </div>
+                        <div class="item" data-value="4">
+                            Khung Kim Cương
+                        </div>
+                        <div class="item" data-value="5">
+                            Khung Bạch Kim
+                        </div>
+                        <div class="item" data-value="6">
+                            Khung Vàng
+                        </div>
+                        <div class="item" data-value="7">
+                            Khung Bạc
+                        </div>
+                        <div class="item" data-value="8">
+                            Khung Đồng
+                        </div>
+                        <div class="item" data-value="9">
+                            Chưa Khung
+                        </div>
+                    </div>
+                </div>
+                <label class="label">Lọc đặc biệt</label>
+                <div id="other" class="ui fluid selection dropdown">
+                    <input type="hidden" name="rank" />
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Không Chọn</div>
+                    <div class="menu">
+                        <div class="item" data-value="1">
+                            <div class="ui pink empty circular label"></div>
+                            Acc mới đăng
+                        </div>
+                        <div class="item" data-value="2">
+                            <div class="ui red empty circular label"></div>
+                            Nhiều tướng nhất
+                        </div>
+                        <div class="item" data-value="3">
+                            <div class="ui blue empty circular label"></div>
+                            Nhiều skin nhất
+                        </div>
+                        <div class="item" data-value="4">
+                            <div class="ui green empty circular label"></div>
+                            Giá cao nhất
+                        </div>
+                        <div class="item" data-value="5">
+                            <div class="ui grey empty circular label"></div>
+                            Giá rẻ nhất
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sixteen wide mobile sixteen wide tablet three wide computer column">
+                <label class="label">Tìm Acc Theo Id</label>
+                <div class="ui icon input">
+                    <input id="acc_id" type="text" placeholder="Nhập mã số acc..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nhập mã số acc...'" value="" />
+                    <i onclick="find_acc_base_id()" class="circular search link icon"></i>
+                </div>
+                <button id="clear" class="button-green" style="margin-top: 25px;">
+                    <i class="window close icon"></i>Xóa Lọc
+                </button>
+            </div>
+            <div class="sixteen wide mobile sixteen wide tablet seven wide computer column">
+                <label class="label">Chọn Tướng</label>
+                <select id="champ" class="ui fluid search dropdown" multiple="">
+                    <option value="">Nhập tên tướng</option>
+                    <option value="266">Aatrox</option>
+                    <option value="103">Ahri</option>
+                    <option value="84">Akali</option>
+                    <option value="12">Alistar</option>
+                    <option value="32">Amumu</option>
+                    <option value="34">Anivia</option>
+                    <option value="1">Annie</option>
+                    <option value="523">Aphelios</option>
+                    <option value="22">Ashe</option>
+                    <option value="136">Aurelion Sol</option>
+                    <option value="268">Azir</option>
+                    <option value="432">Bard</option>
+                    <option value="53">Blitzcrank</option>
+                    <option value="63">Brand</option>
+                    <option value="201">Braum</option>
+                    <option value="51">Caitlyn</option>
+                    <option value="164">Camille</option>
+                    <option value="69">Cassiopeia</option>
+                    <option value="31">Cho&#039;Gath</option>
+                    <option value="42">Corki</option>
+                    <option value="122">Darius</option>
+                    <option value="131">Diana</option>
+                    <option value="119">Draven</option>
+                    <option value="36">Dr. Mundo</option>
+                    <option value="245">Ekko</option>
+                    <option value="60">Elise</option>
+                    <option value="28">Evelynn</option>
+                    <option value="81">Ezreal</option>
+                    <option value="9">Fiddlesticks</option>
+                    <option value="114">Fiora</option>
+                    <option value="105">Fizz</option>
+                    <option value="3">Galio</option>
+                    <option value="41">Gangplank</option>
+                    <option value="86">Garen</option>
+                    <option value="150">Gnar</option>
+                    <option value="79">Gragas</option>
+                    <option value="104">Graves</option>
+                    <option value="120">Hecarim</option>
+                    <option value="74">Heimerdinger</option>
+                    <option value="420">Illaoi</option>
+                    <option value="39">Irelia</option>
+                    <option value="427">Ivern</option>
+                    <option value="40">Janna</option>
+                    <option value="59">Jarvan IV</option>
+                    <option value="24">Jax</option>
+                    <option value="126">Jayce</option>
+                    <option value="202">Jhin</option>
+                    <option value="222">Jinx</option>
+                    <option value="145">Kai&#039;Sa</option>
+                    <option value="429">Kalista</option>
+                    <option value="43">Karma</option>
+                    <option value="30">Karthus</option>
+                    <option value="38">Kassadin</option>
+                    <option value="55">Katarina</option>
+                    <option value="10">Kayle</option>
+                    <option value="141">Kayn</option>
+                    <option value="85">Kennen</option>
+                    <option value="121">Kha&#039;Zix</option>
+                    <option value="203">Kindred</option>
+                    <option value="240">Kled</option>
+                    <option value="96">Kog&#039;Maw</option>
+                    <option value="7">LeBlanc</option>
+                    <option value="64">Lee Sin</option>
+                    <option value="89">Leona</option>
+                    <option value="127">Lissandra</option>
+                    <option value="236">Lucian</option>
+                    <option value="117">Lulu</option>
+                    <option value="99">Lux</option>
+                    <option value="54">Malphite</option>
+                    <option value="90">Malzahar</option>
+                    <option value="57">Maokai</option>
+                    <option value="11">Master Yi</option>
+                    <option value="21">Miss Fortune</option>
+                    <option value="62">Ngộ Không</option>
+                    <option value="82">Mordekaiser</option>
+                    <option value="25">Morgana</option>
+                    <option value="267">Nami</option>
+                    <option value="75">Nasus</option>
+                    <option value="111">Nautilus</option>
+                    <option value="518">Neeko</option>
+                    <option value="76">Nidalee</option>
+                    <option value="56">Nocturne</option>
+                    <option value="20">Nunu &amp; Willump</option>
+                    <option value="2">Olaf</option>
+                    <option value="61">Orianna</option>
+                    <option value="516">Ornn</option>
+                    <option value="80">Pantheon</option>
+                    <option value="78">Poppy</option>
+                    <option value="555">Pyke</option>
+                    <option value="246">Qiyana</option>
+                    <option value="133">Quinn</option>
+                    <option value="497">Rakan</option>
+                    <option value="33">Rammus</option>
+                    <option value="421">Rek&#039;Sai</option>
+                    <option value="58">Renekton</option>
+                    <option value="107">Rengar</option>
+                    <option value="92">Riven</option>
+                    <option value="68">Rumble</option>
+                    <option value="13">Ryze</option>
+                    <option value="113">Sejuani</option>
+                    <option value="235">Senna</option>
+                    <option value="875">Sett</option>
+                    <option value="35">Shaco</option>
+                    <option value="98">Shen</option>
+                    <option value="102">Shyvana</option>
+                    <option value="27">Singed</option>
+                    <option value="14">Sion</option>
+                    <option value="15">Sivir</option>
+                    <option value="72">Skarner</option>
+                    <option value="37">Sona</option>
+                    <option value="16">Soraka</option>
+                    <option value="50">Swain</option>
+                    <option value="517">Sylas</option>
+                    <option value="134">Syndra</option>
+                    <option value="223">Tahm Kench</option>
+                    <option value="163">Taliyah</option>
+                    <option value="91">Talon</option>
+                    <option value="44">Taric</option>
+                    <option value="17">Teemo</option>
+                    <option value="412">Thresh</option>
+                    <option value="18">Tristana</option>
+                    <option value="48">Trundle</option>
+                    <option value="23">Tryndamere</option>
+                    <option value="4">Twisted Fate</option>
+                    <option value="29">Twitch</option>
+                    <option value="77">Udyr</option>
+                    <option value="6">Urgot</option>
+                    <option value="110">Varus</option>
+                    <option value="67">Vayne</option>
+                    <option value="45">Veigar</option>
+                    <option value="161">Vel&#039;Koz</option>
+                    <option value="254">Vi</option>
+                    <option value="112">Viktor</option>
+                    <option value="8">Vladimir</option>
+                    <option value="106">Volibear</option>
+                    <option value="19">Warwick</option>
+                    <option value="498">Xayah</option>
+                    <option value="101">Xerath</option>
+                    <option value="5">Xin Zhao</option>
+                    <option value="157">Yasuo</option>
+                    <option value="83">Yorick</option>
+                    <option value="350">Yuumi</option>
+                    <option value="154">Zac</option>
+                    <option value="238">Zed</option>
+                    <option value="115">Ziggs</option>
+                    <option value="26">Zilean</option>
+                    <option value="142">Zoe</option>
+                    <option value="143">Zyra</option>
+                </select>
+                <label class="label">Chọn Skin</label>
+                <select id="skin" class="ui fluid search dropdown" multiple="">
+                    <option value="">Nhập tên trang phục</option>
+                    <option value="266001">Aatrox Công Lý</option>
+                    <option value="266002">Aatrox Máy Móc</option>
+                    <option value="266003">Aatrox Thợ Săn Đại Dương</option>
+                    <option value="266007">Aatrox Huyết Nguyệt</option>
+                    <option value="266008">Aatrox Huyết Nguyệt - Hàng Hiệu</option>
+                    <option value="266009">Aatrox Vinh Quang</option>
+                    <option value="103001">Ahri Hàn Triều</option>
+                    <option value="103002">Ahri Bóng Đêm</option>
+                    <option value="103003">Ahri Hỏa Hồ Li</option>
+                    <option value="103004">Ahri Thần Tượng Âm Nhạc</option>
+                    <option value="103005">Ahri Thách Đấu</option>
+                    <option value="103006">Ahri Nữ Sinh Thanh Lịch</option>
+                    <option value="103007">Ahri Giả Lập</option>
+                    <option value="103014">Ahri Vệ Binh Tinh Tú</option>
+                    <option value="103015">K/DA Ahri</option>
+                    <option value="103016">K/DA Ahri - Hàng Hiệu</option>
+                    <option value="103017">Ahri Thần Rừng</option>
+                    <option value="84001">Akali Ong Bắp Cày</option>
+                    <option value="84002">Akali Hỏa Ngục</option>
+                    <option value="84003">Akali Cầu Thủ</option>
+                    <option value="84004">Akali Y Tá</option>
+                    <option value="84005">Akali Huyết Nguyệt</option>
+                    <option value="84006">Akali Nanh Bạc</option>
+                    <option value="84007">Akali Thợ Săn</option>
+                    <option value="84008">Akali Hải Sản</option>
+                    <option value="84009">K/DA Akali</option>
+                    <option value="84013">K/DA Akali - Hàng Hiệu</option>
+                    <option value="84014">SIÊU PHẨM: Akali</option>
+                    <option value="84015">True Damage Akali</option>
+                    <option value="12001">Alistar Đen</option>
+                    <option value="12002">Alistar Vàng</option>
+                    <option value="12003">Alistar Đấu Sĩ</option>
+                    <option value="12004">Alistar Cao Bồi</option>
+                    <option value="12005">Alistar Ngưu Ma Vương</option>
+                    <option value="12006">Alistar Địa Ngục</option>
+                    <option value="12007">Alistar Hậu Vệ</option>
+                    <option value="12008">Alistar Toán Cướp Hắc Ám</option>
+                    <option value="12009">SKT T1 Alistar</option>
+                    <option value="12010">Alistar Bò Sữa</option>
+                    <option value="12019">Alistar Công Nghệ</option>
+                    <option value="12020">Alistar Chinh Phục</option>
+                    <option value="32001">Amumu Pha-ra-ông</option>
+                    <option value="32002">Amumu Vancouver</option>
+                    <option value="32003">Amumu Tự Kỉ</option>
+                    <option value="32004">Amumu Quà-trả-lại</option>
+                    <option value="32005">Amumu Suýt Hoa Vương </option>
+                    <option value="32006">Amumu Hiệp Sĩ</option>
+                    <option value="32007">Amumu Người Máy U Sầu</option>
+                    <option value="32008">Amumu Tiệc Bất Ngờ</option>
+                    <option value="32017">Amumu Hỏa Ngục</option>
+                    <option value="32023">Amumu Công Nghệ</option>
+                    <option value="34001">Anivia Đoàn Kết</option>
+                    <option value="34002">Anivia Diều Hâu</option>
+                    <option value="34003">Anivia Thợ Săn Noxus</option>
+                    <option value="34004">Anivia Công Nghệ</option>
+                    <option value="34005">Anivia Sương Đen</option>
+                    <option value="34006">Anivia Thời Tiền Sử</option>
+                    <option value="34007">Anivia Nữ Hoàng Lễ Hội</option>
+                    <option value="34008">Anivia Tiên Hạc Giấy</option>
+                    <option value="1001">Annie Gô-tích</option>
+                    <option value="1002">Annie Quàng Khăn Đỏ</option>
+                    <option value="1003">Annie ở Xứ Thần Tiên</option>
+                    <option value="1004">Annie Hoa Hậu</option>
+                    <option value="1005">Annie Lửa Băng</option>
+                    <option value="1006">Annie Nghịch Đảo</option>
+                    <option value="1007">Annie Kinh Dị</option>
+                    <option value="1008">Annie Gấu Trúc</option>
+                    <option value="1009">Annie Gấu Bé Bỏng</option>
+                    <option value="1010">Annie Công Nghệ</option>
+                    <option value="1011">Annie Siêu Nhân Thiên Hà</option>
+                    <option value="1012">Annie Sinh Nhật</option>
+                    <option value="523001">Aphelios Ma Sứ</option>
+                    <option value="22001">Ashe Freljord</option>
+                    <option value="22002">Ashe Rừng Xanh</option>
+                    <option value="22003">Ashe Hoang Dã</option>
+                    <option value="22004">Ashe Nữ Hoàng</option>
+                    <option value="22005">Ashe Thạch Anh</option>
+                    <option value="22006">Ashe Mũi Tên Tình Ái</option>
+                    <option value="22007">Ashe Toán Cướp Hắc Ám</option>
+                    <option value="22008">SIÊU PHẨM: Ashe</option>
+                    <option value="22009">Ashe Quán Quân</option>
+                    <option value="22011">Ashe Nữ Hoàng Vũ Trụ</option>
+                    <option value="22017">Ashe Cao Bồi</option>
+                    <option value="136001">Aurelion Sol Hỏa Kim Giáp</option>
+                    <option value="136002">Aurelion Sol Máy Móc</option>
+                    <option value="268001">Azir Ngân Hà</option>
+                    <option value="268002">Azir Thần Mộ</option>
+                    <option value="268003">SKT T1 Azir</option>
+                    <option value="268004">Azir Đinh Dậu</option>
+                    <option value="432001">Bard Thần Rừng</option>
+                    <option value="432005">Bard Ngày Tuyết Rơi</option>
+                    <option value="432006">Bard Nhạc Sĩ Lang Thang</option>
+                    <option value="53001">Blitzcrank Rệu Rã</option>
+                    <option value="53002">Blitzcrank Thủ Môn</option>
+                    <option value="53003">Blitzcrank Đấm Bốc</option>
+                    <option value="53004">Blitzcrank Xe Độ</option>
+                    <option value="53005">Đâu Phải Blitzcrank</option>
+                    <option value="53006">iBlitzcrank</option>
+                    <option value="53007">Riot Blitzcrank</option>
+                    <option value="53011">Blitzcrank Trùm Phụ</option>
+                    <option value="53020">Blitzcrank Mũi Khoan Bóng Tối</option>
+                    <option value="53021">Blitzcrank Mũi Khoan Ánh Sáng</option>
+                    <option value="53022">Blitzcrank Vạc Lủng</option>
+                    <option value="63001">Brand Tận Thế</option>
+                    <option value="63002">Brand Du Côn</option>
+                    <option value="63003">Brand Lõi Băng</option>
+                    <option value="63004">Brand Thây Ma</option>
+                    <option value="63005">Brand Hỏa Linh</option>
+                    <option value="63006">Brand Trùm Phụ</option>
+                    <option value="63007">Brand Hồ Quang</option>
+                    <option value="201001">Braum Đồ Long</option>
+                    <option value="201002">Braum Mãnh Hổ Đô Vật</option>
+                    <option value="201003">Braum Hộ Vệ Dũng Cảm</option>
+                    <option value="201010">Braum Ông Già Tuyết</option>
+                    <option value="201011">Braum Mafia</option>
+                    <option value="201024">Braum Bánh Ngọt</option>
+                    <option value="51001">Caitlyn Du Kích</option>
+                    <option value="51002">Caitlyn Cảnh Sát Trưởng</option>
+                    <option value="51003">Caitlyn Săn Bắn</option>
+                    <option value="51004">Caitlyn Bắc Cực</option>
+                    <option value="51005">Sĩ Quan Caitlyn</option>
+                    <option value="51006">Caitlyn Thợ Săn</option>
+                    <option value="51010">Caitlyn Nguyệt Hồn</option>
+                    <option value="51011">Caitlyn Vũ Khí Tối Thượng</option>
+                    <option value="51013">Caitlyn Tiệc Bể Bơi</option>
+                    <option value="51019">Caitlyn Giả Lập</option>
+                    <option value="51020">Caitlyn Giả Lập - Hàng Hiệu</option>
+                    <option value="164001">Camille Siêu Máy Tính</option>
+                    <option value="164002">Camille Tiên Hắc Ám</option>
+                    <option value="164010">iG Camille</option>
+                    <option value="69001">Cassiopeia Nổi Loạn</option>
+                    <option value="69002">Cassiopeia Tiên Cá</option>
+                    <option value="69003">Cassiopeia Cao Quý</option>
+                    <option value="69004">Cassiopeia Quý Tỵ</option>
+                    <option value="69008">Cassiopeia Bất Diệt</option>
+                    <option value="31001">Cho&#039;Gath Ác Mộng</option>
+                    <option value="31002">Quý Ông Cho&#039;Gath</option>
+                    <option value="31003">Cho&#039;Gath Hồ Lốc-nét</option>
+                    <option value="31004">Cho&#039;Gath Hóa Thạch</option>
+                    <option value="31005">Cho&#039;Gath Cỗ Máy Hủy Diệt</option>
+                    <option value="31006">Cho&#039;Gath Thời Tiền Sử</option>
+                    <option value="31007">Cho&#039;Gath Hắc Tinh</option>
+                    <option value="42001">Corki Đĩa Bay</option>
+                    <option value="42002">Corki Xe Trượt Băng</option>
+                    <option value="42003">Corki Nam Tước Đỏ</option>
+                    <option value="42004">Corki Tay Chơi</option>
+                    <option value="42005">Corki Cưỡi Urf</option>
+                    <option value="42006">Corki Long Chiến Cơ</option>
+                    <option value="42007">Fnatic Corki</option>
+                    <option value="42008">Corki Giả Lập</option>
+                    <option value="42018">CorGi Siêu Vòng Ba</option>
+                    <option value="122001">Chúa Tể Darius</option>
+                    <option value="122002">Darius Vũ Khí Sinh Học</option>
+                    <option value="122003">Darius Hoang Dã Đại Vương</option>
+                    <option value="122004">Darius Siêu Sao Úp Rổ</option>
+                    <option value="122008">Darius Học Sinh Cá Biệt</option>
+                    <option value="122014">Darius Hiểm Họa Không Gian</option>
+                    <option value="122015">Darius Lang Vương</option>
+                    <option value="122016">Darius Cao Bồi</option>
+                    <option value="131001">Diana Chiến Thần Bóng Tối</option>
+                    <option value="131002">Diana Hằng Nga</option>
+                    <option value="131003">Diana Địa Ngục</option>
+                    <option value="131011">Diana Huyết Nguyệt</option>
+                    <option value="131012">Diana Hắc Thủy</option>
+                    <option value="131018">Diana Đồ Long</option>
+                    <option value="119001">Draven Đoạt Mệnh</option>
+                    <option value="119002">Draven Giác Đấu</option>
+                    <option value="119003">Draven Bình Luận Viên</option>
+                    <option value="119004">Draven Tiệc Bể Bơi</option>
+                    <option value="119005">Draven Thợ Săn Quái Thú</option>
+                    <option value="119006">Draven x Draven</option>
+                    <option value="119012">Draven Anh Già Tuyết</option>
+                    <option value="119013">Draven Loạn Thế Thần Binh</option>
+                    <option value="36001">Dr. Mundo Độc Dược</option>
+                    <option value="36002">MunĐÔ</option>
+                    <option value="36003">Mundo Giám Đốc</option>
+                    <option value="36004">Mundo Mundo</option>
+                    <option value="36005">Mundo Đao Phủ</option>
+                    <option value="36006">Mundo Cuồng Loạn</option>
+                    <option value="36007">TPA Mundo</option>
+                    <option value="36008">Mundo Tiệc Bể Bơi</option>
+                    <option value="36009">Mun Đô Vật</option>
+                    <option value="36010">Mundo Hoàng Tử Đóng Băng</option>
+                    <option value="245001">Ekko Bão Cát</option>
+                    <option value="245002">Ekko Nam Sinh Ngổ Ngáo</option>
+                    <option value="245003">SIÊU PHẨM: Ekko</option>
+                    <option value="245011">SKT T1 Ekko</option>
+                    <option value="245012">Ekko Bí Ngô</option>
+                    <option value="245019">True Damage Ekko</option>
+                    <option value="60001">Elise Hoa Độc</option>
+                    <option value="60002">Elise Vinh Quang</option>
+                    <option value="60003">Elise Huyết Nguyệt</option>
+                    <option value="60004">SKT T1 Elise</option>
+                    <option value="60005">Elise Siêu Nhân Thiên Hà</option>
+                    <option value="28001">Evelynn Bóng Tối</option>
+                    <option value="28002">Evelynn Dạ Vũ</option>
+                    <option value="28003">Evelynn Tango</option>
+                    <option value="28004">Evelynn Cạy Két</option>
+                    <option value="28005">Evelynn Huyết Nguyệt</option>
+                    <option value="28006">K/DA Evelynn</option>
+                    <option value="28007">K/DA Evelynn - Hàng Hiệu</option>
+                    <option value="28008">Evelynn Bánh Ngọt</option>
+                    <option value="81001">Ezreal Nottingham </option>
+                    <option value="81002">Ezreal Tiền Đạo</option>
+                    <option value="81003">Ezreal Băng Giá</option>
+                    <option value="81004">Ezreal Thám Hiểm</option>
+                    <option value="81005">Ezreal Vũ Khí Tối Thượng</option>
+                    <option value="81006">TPA Ezreal</option>
+                    <option value="81007">Ezreal Thanh Lịch</option>
+                    <option value="81008">Ezreal Át Bích</option>
+                    <option value="81009">Ezreal Giả Lập</option>
+                    <option value="81018">Ezreal Vệ Binh Tinh Tú</option>
+                    <option value="81019">SSG Ezreal</option>
+                    <option value="81020">Ezreal Vệ Binh Pyjama</option>
+                    <option value="81021">Ezreal Học Viện Chiến Binh</option>
+                    <option value="9001">Fiddlesticks Bóng Ma</option>
+                    <option value="9002">Fiddlesticks Anh Quốc</option>
+                    <option value="9003">Fiddlesticks Tướng Cướp</option>
+                    <option value="9004">Fiddlesticks Bí Ngô</option>
+                    <option value="9005">Fiddlesticks Cướp Biển</option>
+                    <option value="9006">Fiddlesticks Tiệc Bất Ngờ</option>
+                    <option value="9007">Fiddlesticks Cây Kẹo Dễ Sợ</option>
+                    <option value="9008">Fiddlesticks Tà Thần Tái Thế</option>
+                    <option value="9009">Fiddlesticks Cận Vệ Thép</option>
+                    <option value="114001">Fiora Ngự Lâm Quân</option>
+                    <option value="114002">Fiora Quạ Đêm</option>
+                    <option value="114003">Cô Giáo Fiora</option>
+                    <option value="114004">SIÊU PHẨM: Fiora</option>
+                    <option value="114005">Fiora Tiệc Bể Bơi</option>
+                    <option value="114022">Fiora Phi Kiếm</option>
+                    <option value="114023">Fiora Kiếm Sĩ Tình Ái</option>
+                    <option value="114031">iG Fiora</option>
+                    <option value="105001">Fizz Cư Dân Át-lan-tích</option>
+                    <option value="105002">Fizz Lãnh Nguyên</option>
+                    <option value="105003">Fizz Đánh Cá</option>
+                    <option value="105004">Fizz Hư Không</option>
+                    <option value="105008">Fizz Thỏ Phục Sinh</option>
+                    <option value="105009">Fizz Siêu Nhân Thiên Hà</option>
+                    <option value="105010">Fizz Biệt Đội Omega</option>
+                    <option value="105014">Fizz Chú Chó Tinh Nghịch</option>
+                    <option value="105015">Fizz Chú Chó Tinh Nghịch - Hàng Hiệu</option>
+                    <option value="3001">Galio Ma Pháp</option>
+                    <option value="3002">Galio Công Nghệ</option>
+                    <option value="3003">Galio Biệt Kích</option>
+                    <option value="3004">Galio Địa Ngục</option>
+                    <option value="3005">Galio Thanh Lịch</option>
+                    <option value="3006">Gà-lio</option>
+                    <option value="3013">Galio Hỏa Ngục</option>
+                    <option value="41001">Hồn Ma Gangplank</option>
+                    <option value="41002">Gangplank Lão Tướng</option>
+                    <option value="41003">Gangplank Thủy Thủ</option>
+                    <option value="41004">Gangplank Lính Chì</option>
+                    <option value="41005">Gangplank Đặc Nhiệm</option>
+                    <option value="41006">Gangplank Ba Tư Đại Đế</option>
+                    <option value="41007">Gangplank Thuyền Trưởng</option>
+                    <option value="41008">Gangplank Hiểm Họa Không Gian</option>
+                    <option value="41014">Gangplank Tiệc Bể Bơi</option>
+                    <option value="86001">Garen Huyết Kiếm</option>
+                    <option value="86002">Garen Chiến Binh Sa Mạc</option>
+                    <option value="86003">Garen Biệt Kích</option>
+                    <option value="86004">Garen Hiệp Sĩ Đen</option>
+                    <option value="86005">Garen Phong Trần</option>
+                    <option value="86006">Garen Quân Đoàn Thép</option>
+                    <option value="86010">Garen Đô Đốc Độc Đoán</option>
+                    <option value="86011">Garen Long Tướng</option>
+                    <option value="86013">Garen Sư Vương</option>
+                    <option value="86014">Garen Dân Chơi Demacia</option>
+                    <option value="86022">Garen Loạn Thế Thần Binh</option>
+                    <option value="86023">Garen Loạn Thế Thần Binh - Hàng Hiệu</option>
+                    <option value="150001">Gnar Khủng Long Con</option>
+                    <option value="150002">Gnar Quý Ông</option>
+                    <option value="150003">Gnar Ngày Tuyết Rơi</option>
+                    <option value="150004">Gnar Mãnh Sư Đô Vật </option>
+                    <option value="150013">Gnar Siêu Nhân Thiên Hà</option>
+                    <option value="150014">SSG Gnar</option>
+                    <option value="79001">Gragas Thợ Lặn</option>
+                    <option value="79002">Gragas Hai Lúa</option>
+                    <option value="79003">Santa Gragas</option>
+                    <option value="79004">Quý Ông Gragas</option>
+                    <option value="79005">Gragas Du Côn</option>
+                    <option value="79006">Oktoberfest Gragas</option>
+                    <option value="79007">Gragas Siêu Cổ Động Viên</option>
+                    <option value="79008">Fnatic Gragas</option>
+                    <option value="79009">Gragas Hiệp Sĩ Say Rượu</option>
+                    <option value="79010">Gragas Đặc Vụ Bắc Cực</option>
+                    <option value="104001">Graves Đánh Thuê</option>
+                    <option value="104002">Graves Vượt Ngục</option>
+                    <option value="104003">Graves Mafia</option>
+                    <option value="104004">Riot Graves</option>
+                    <option value="104005">Graves Tiệc Bể Bơi</option>
+                    <option value="104006">Graves Thời Niên Thiếu</option>
+                    <option value="104007">Graves Ngày Tuyết Rơi</option>
+                    <option value="104014">Graves Vinh Quang</option>
+                    <option value="104018">Graves Cận Vệ Thép</option>
+                    <option value="104025">Graves Hiệu Phó Chiến Binh</option>
+                    <option value="120001">Hecarim Kị Sĩ Máu</option>
+                    <option value="120002">Hecarim Tử Thần</option>
+                    <option value="120003">Hecarim Không Đầu</option>
+                    <option value="120004">Hecarim Giả Lập</option>
+                    <option value="120005">Hecarim Thần Rừng</option>
+                    <option value="120006">Hecarim Hung Thần</option>
+                    <option value="120007">Hecarim Thánh Kị Sĩ</option>
+                    <option value="120008">Hecarim Cao Bồi</option>
+                    <option value="74001">Heimerdinger Ngoài Hành Tinh</option>
+                    <option value="74002">Heimerdinger Nám Mặt</option>
+                    <option value="74003">Heimerdinger Độ Máy</option>
+                    <option value="74004">Heimerdinger Người Tuyết</option>
+                    <option value="74005">Heimerdinger Nguyên Tử</option>
+                    <option value="74006">Heimerdinger Luyện Rồng</option>
+                    <option value="420001">Illaoi Sứ Giả Hư Không</option>
+                    <option value="420002">Illaoi Kháng Chiến</option>
+                    <option value="39001">Irelia Sát Thủ</option>
+                    <option value="39002">Irelia Phi Công</option>
+                    <option value="39003">Irelia Gián Điệp</option>
+                    <option value="39004">Irelia Băng Kiếm</option>
+                    <option value="39005">Irelia Hội Sen Hồng</option>
+                    <option value="39006">Irelia Thánh Kiếm</option>
+                    <option value="39015">iG Irelia</option>
+                    <option value="39016">SIÊU PHẨM: Irelia</option>
+                    <option value="39017">SIÊU PHẨM: Irelia - Hàng Hiệu</option>
+                    <option value="427001">Ivern Vua Kẹo</option>
+                    <option value="427002">Ivern Siêu Sao Úp Rổ</option>
+                    <option value="40001">Janna Giông Tố</option>
+                    <option value="40002">Janna Công Nghệ</option>
+                    <option value="40003">Janna Chúa Tuyết</option>
+                    <option value="40004">Janna Vinh Quang</option>
+                    <option value="40005">Janna Dự Báo Thời Tiết</option>
+                    <option value="40006">Fnatic Janna</option>
+                    <option value="40007">Janna Vệ Binh Tinh Tú</option>
+                    <option value="40008">Janna Tiên Kiếm</option>
+                    <option value="40013">Janna Phù Thủy</option>
+                    <option value="40020">Janna Vệ Binh Sa Mạc</option>
+                    <option value="59001">Jarvan IV Biệt Kích</option>
+                    <option value="59002">Jarvan IV Đồ Long</option>
+                    <option value="59003">Jarvan IV Giáp Đen</option>
+                    <option value="59004">Jarvan IV Vinh Quang</option>
+                    <option value="59005">Jarvan IV Lữ Bố</option>
+                    <option value="59006">Fnatic Jarvan IV</option>
+                    <option value="59007">Jarvan IV Hắc Tinh</option>
+                    <option value="59008">SSG Jarvan IV</option>
+                    <option value="59009">Jarvan IV Công Nghệ</option>
+                    <option value="24001">Jax Khúc Côn Cầu</option>
+                    <option value="24002">Jax Du Côn</option>
+                    <option value="24003">Jax Ngư Ông</option>
+                    <option value="24004">PAX Jax</option>
+                    <option value="24005">Jax Giác Đấu</option>
+                    <option value="24006">Jax Giữ Đền</option>
+                    <option value="24007">Jax Phục Hận</option>
+                    <option value="24008">SKT T1 Jax</option>
+                    <option value="24012">Jax Tổ Đội Quản Ngục</option>
+                    <option value="24013">Jax Thần Trượng</option>
+                    <option value="24014">Jax Loạn Thế Thần Binh</option>
+                    <option value="126001">Jayce Giả Kim</option>
+                    <option value="126002">Jayce Thanh Lịch</option>
+                    <option value="126003">Jayce Kẻ Phản Diện</option>
+                    <option value="126004">Jayce Chiến Binh Ánh Sáng</option>
+                    <option value="126005">Jayce Học Viện Chiến Binh</option>
+                    <option value="202001">Jhin Cao Bồi</option>
+                    <option value="202002">Jhin Huyết Nguyệt</option>
+                    <option value="202003">SKT T1 Jhin</option>
+                    <option value="202004">SIÊU PHẨM: Jhin</option>
+                    <option value="202005">Jhin Vũ Trụ Hắc Ám</option>
+                    <option value="222001">Jinx Mafia</option>
+                    <option value="222002">Jinx Pháo Hoa</option>
+                    <option value="222003">Jinx Thợ Săn Xác Sống</option>
+                    <option value="222004">Jinx Vệ Binh Tinh Tú</option>
+                    <option value="222012">Jinx Yêu Tinh Giáng Sinh</option>
+                    <option value="222013">Jinx Siêu Quậy Không Gian</option>
+                    <option value="222020">SIÊU PHẨM: Jinx</option>
+                    <option value="145001">Kai&#039;Sa Thiên Sứ Tương Lai</option>
+                    <option value="145014">K/DA Kai&#039;Sa</option>
+                    <option value="145015">K/DA Kai&#039;Sa - Hàng Hiệu</option>
+                    <option value="145016">iG Kai&#039;Sa</option>
+                    <option value="145017">Kai&#039;Sa Giả Lập</option>
+                    <option value="429001">Kalista Huyết Nguyệt</option>
+                    <option value="429002">Kalista Quán Quân</option>
+                    <option value="429003">SKT T1 Kalista</option>
+                    <option value="43001">Karma Nữ Thần Mặt Trời</option>
+                    <option value="43002">Karma Hoa Anh Đào</option>
+                    <option value="43003">Karma Truyền Thống</option>
+                    <option value="43004">Karma Hội Sen Hồng</option>
+                    <option value="43005">Karma Tổ Đội Quản Ngục</option>
+                    <option value="43006">Karma Mùa Đông Kỳ Diệu</option>
+                    <option value="43007">Karma Chinh Phục</option>
+                    <option value="43008">Karma Hắc Tinh</option>
+                    <option value="43019">Karma Thần Sứ</option>
+                    <option value="30001">Karthus Bóng Ma</option>
+                    <option value="30002">Karthus Tự Do</option>
+                    <option value="30003">Thần Chết Karthus</option>
+                    <option value="30004">Pentakill Karthus</option>
+                    <option value="30005">Fnatic Karthus</option>
+                    <option value="30009">Karthus Hoàng Tử Tai Ương</option>
+                    <option value="38001">Kassadin Lễ Hội</option>
+                    <option value="38002">Kassadin Biển Sâu</option>
+                    <option value="38003">Kassadin Ngày Xưa</option>
+                    <option value="38004">Kassadin Sứ Giả</option>
+                    <option value="38005">Kassadin Đạo Tặc Vũ Trụ</option>
+                    <option value="38006">Bá Tước Kassadin</option>
+                    <option value="55001">Katarina Đánh Thuê</option>
+                    <option value="55002">Trọng Tài Katarina</option>
+                    <option value="55003">Katarina Cướp Biển</option>
+                    <option value="55004">Katarina Mèo Kitty</option>
+                    <option value="55005">Katarina Chỉ Huy</option>
+                    <option value="55006">Katarina Bão Cát</option>
+                    <option value="55007">Katarina Cô Nàng Tuần Lộc</option>
+                    <option value="55008">Katarina Loạn Thế Anh Hùng</option>
+                    <option value="55009">SIÊU PHẨM: Katarina</option>
+                    <option value="55010">Katarina Hội Tử Thần</option>
+                    <option value="55012">Katarina Học Viện Chiến Binh</option>
+                    <option value="10001">Kayle Bạc</option>
+                    <option value="10002">Kayle Lục Bảo</option>
+                    <option value="10003">Kayle Siêu Phàm</option>
+                    <option value="10004">Kayle Chiến Thần</option>
+                    <option value="10005">Kayle Phán Quyết</option>
+                    <option value="10006">Kayle Thiên Sứ Công Nghệ</option>
+                    <option value="10007">Riot Kayle</option>
+                    <option value="10008">Kayle Thiết Phán Quan</option>
+                    <option value="10009">Pentakill Kayle</option>
+                    <option value="141001">Kayn Thợ Săn Linh Hồn</option>
+                    <option value="141002">Kayn Hung Thần Không Gian</option>
+                    <option value="85001">Kennen Chết Chóc</option>
+                    <option value="85002">Kennen Vua Đầm Lầy</option>
+                    <option value="85003">Kennen Karate</option>
+                    <option value="85004">Kennen Nội Khoa</option>
+                    <option value="85005">Kennen Bắc Cực</option>
+                    <option value="85006">Kennen Huyết Nguyệt</option>
+                    <option value="85007">Kennen Siêu Nhân</option>
+                    <option value="121001">Kha&#039;Zix Máy Móc</option>
+                    <option value="121002">Kha&#039;Zix Vệ Binh Sa Mạc</option>
+                    <option value="121003">Kha&#039;Zix Hoa Độc</option>
+                    <option value="121004">Kha&#039;Zix Hắc Tinh</option>
+                    <option value="121011">Kha&#039;Zix Quán Quân</option>
+                    <option value="203001">Kindred Lửa Bóng Tối</option>
+                    <option value="203002">Kindred Siêu Nhân Thiên Hà</option>
+                    <option value="240001">Sir Kled</option>
+                    <option value="240002">Bá Tước Kledula</option>
+                    <option value="96001">Kog&#039;Maw Sâu Róm</option>
+                    <option value="96002">Kog&#039;Maw Sa Mạc</option>
+                    <option value="96003">Kog&#039;Maw Bướm Chúa</option>
+                    <option value="96004">Kog&#039;Maw Tuần Lộc</option>
+                    <option value="96005">Kog&#039;Maw Múa Lân</option>
+                    <option value="96006">Kog&#039;Maw Biển Sâu</option>
+                    <option value="96007">Kog&#039;Maw Hóa Thạch</option>
+                    <option value="96008">Kog&#039;Maw Cỗ Máy Chiến Đấu</option>
+                    <option value="96009">Kog&#039;Maw Cún Con</option>
+                    <option value="96010">Kog&#039;Maw Công Nghệ</option>
+                    <option value="7001">LeBlanc Độc Ác</option>
+                    <option value="7002">LeBlanc Ảo Thuật</option>
+                    <option value="7003">LeBlanc Tầm Gửi</option>
+                    <option value="7004">LeBlanc Nàng Quạ Đen</option>
+                    <option value="7005">LeBlanc Thần Rừng</option>
+                    <option value="7012">LeBlanc Siêu Máy Tính</option>
+                    <option value="7019">iG LeBlanc</option>
+                    <option value="64001">Lee Sin Cổ Điển</option>
+                    <option value="64002">Lee Sin Thầy Dòng</option>
+                    <option value="64003">Lee Tiểu Long</option>
+                    <option value="64004">Lee Sin Quyền Thái</option>
+                    <option value="64005">Lee Sin Tiệc Bể Bơi</option>
+                    <option value="64006">SKT T1 Lee Sin</option>
+                    <option value="64010">Lee Sin Nốc Ao</option>
+                    <option value="64011">Lee Sin Tuyệt Vô Thần</option>
+                    <option value="64012">Lee Sin Kiến Tạo</option>
+                    <option value="64027">Lee Sin Ma Sứ</option>
+                    <option value="64028">Lee Sin Ma Sứ - Hàng Hiệu</option>
+                    <option value="89001">Leona Chiến Thần</option>
+                    <option value="89002">Leona Vệ Binh</option>
+                    <option value="89003">Leona Hội Iron Solari</option>
+                    <option value="89004">Leona Tiệc Bể Bơi</option>
+                    <option value="89008">SIÊU PHẨM: Leona</option>
+                    <option value="89009">Leona Xúc Xích</option>
+                    <option value="89010">Leona Nhật Thực</option>
+                    <option value="89011">Leona Nguyệt Thực</option>
+                    <option value="89012">Leona Loạn Thế Thần Binh</option>
+                    <option value="127001">Lissandra Huyết Thạch</option>
+                    <option value="127002">Lissandra Kiếm Hậu</option>
+                    <option value="127003">Lissandra Siêu Máy Tính</option>
+                    <option value="127004">Lissandra Tiên Hắc Ám</option>
+                    <option value="236001">Lucian Tay Súng Đánh Thuê</option>
+                    <option value="236002">Lucian Tiền Đạo</option>
+                    <option value="236006">SIÊU PHẨM: Lucian</option>
+                    <option value="236007">Lucian Xạ Thủ Tình Ái</option>
+                    <option value="236008">Lucian Cao Bồi</option>
+                    <option value="236009">Lucian Dân Chơi Demacia</option>
+                    <option value="117001">Lulu Bánh Ngọt</option>
+                    <option value="117002">Lulu Độc Ác</option>
+                    <option value="117003">Lulu Luyện Rồng</option>
+                    <option value="117004">Lulu Mùa Đông Kỳ Diệu</option>
+                    <option value="117005">Lulu Tiệc Bể Bơi</option>
+                    <option value="117006">Lulu Vệ Binh Tinh Tú</option>
+                    <option value="117014">Lulu Pháp Sư Vũ Trụ</option>
+                    <option value="117015">Lulu Vệ Binh Pyjama</option>
+                    <option value="99001">Lux Phù Thủy</option>
+                    <option value="99002">Lux Đạo Tặc</option>
+                    <option value="99003">Lux Biệt Kích</option>
+                    <option value="99004">Lux Hoàng Tộc</option>
+                    <option value="99005">Lux Quân Đoàn Thép</option>
+                    <option value="99006">Lux Vệ Binh Tinh Tú</option>
+                    <option value="99007">Lux Thập Đại Nguyên Tố</option>
+                    <option value="99008">Lux Tân Niên</option>
+                    <option value="99014">Lux Vệ Binh Pyjama</option>
+                    <option value="99015">Lux Học Viện Chiến Binh</option>
+                    <option value="99016">Lux Học Viện Chiến Binh - Hàng Hiệu</option>
+                    <option value="54001">Malphite Rêu Phong</option>
+                    <option value="54002">Malphite San Hô</option>
+                    <option value="54003">Malphite Cẩm Thạch</option>
+                    <option value="54004">Malphite Nham Thạch</option>
+                    <option value="54005">Malphite Bắc Cực</option>
+                    <option value="54006">Malphite Máy Móc</option>
+                    <option value="54007">Malphite Đại Pháo</option>
+                    <option value="54016">Malphite Hộ Pháp Không Gian</option>
+                    <option value="90001">Malzahar Tể Tướng</option>
+                    <option value="90002">Malzahar Hoàng Tử Bóng Đêm</option>
+                    <option value="90003">Thần Đèn Malzahar </option>
+                    <option value="90004">Malzahar Lãnh Chúa</option>
+                    <option value="90005">Malzahar Ngày Tuyết Rơi</option>
+                    <option value="90006">Malzahar Trùm Phụ</option>
+                    <option value="90007">Malzahar Công Nghệ</option>
+                    <option value="57001">Maokai Than Củi</option>
+                    <option value="57002">Maokai Cột Tổ</option>
+                    <option value="57003">Cây Giáng Sinh Maokai</option>
+                    <option value="57004">Maokai Đội Mồ</option>
+                    <option value="57005">Maokai Thủ Môn</option>
+                    <option value="57006">Meo-kai</option>
+                    <option value="57007">Maokai Vinh Quang</option>
+                    <option value="11001">Master Yi Sát Thủ</option>
+                    <option value="11002">Master Yi Người Được Chọn</option>
+                    <option value="11003">Master Yi Xứ Ionia</option>
+                    <option value="11004">Samurai Yi</option>
+                    <option value="11005">Master Yi Thợ Săn </option>
+                    <option value="11009">SIÊU PHẨM: Yi</option>
+                    <option value="11010">Master Yi Kiếm Sĩ Vũ Trụ</option>
+                    <option value="11011">Master Yi Thiên Kiếm</option>
+                    <option value="11017">Yi Người Tuyết</option>
+                    <option value="21001">Miss Fortune Nữ Cao Bồi</option>
+                    <option value="21002">Miss Fortune Waterloo</option>
+                    <option value="21003">Miss Fortune Mật Vụ</option>
+                    <option value="21004">Miss Fortune Kẹo Ngọt</option>
+                    <option value="21005">Miss Fortune Đường Phố</option>
+                    <option value="21006">Miss Fortune Mafia </option>
+                    <option value="21007">Miss Fortune Giả Lập</option>
+                    <option value="21008">Miss Fortune Thuyền Trưởng</option>
+                    <option value="21009">Miss Fortune Tiệc Bể Bơi</option>
+                    <option value="21015">Miss Fortune Vệ Binh Tinh Tú</option>
+                    <option value="21016">Miss Fortune Nữ Thần Không Gian</option>
+                    <option value="21017">Miss Fortune Vệ Binh Pyjama</option>
+                    <option value="21018">Miss Fortune Phù Thủy</option>
+                    <option value="21020">Miss Fortune Phù Thủy - Hàng Hiệu</option>
+                    <option value="62001">Ngộ Không Dung Nham</option>
+                    <option value="62002">Ngộ Không Đại Tướng </option>
+                    <option value="62003">Ngộ Không Ngọc Long</option>
+                    <option value="62004">Ngộ Không Âm Phủ</option>
+                    <option value="62005">Ngộ Không Bá Nhật</option>
+                    <option value="62006">Ngộ Không Thương Thủ Thần Thánh</option>
+                    <option value="82001">Mordekaiser Kị Sĩ Rồng</option>
+                    <option value="82002">Mordekaiser Địa Ngục</option>
+                    <option value="82003">Pentakill Mordekaiser</option>
+                    <option value="82004">Chúa Tể Mordekaiser</option>
+                    <option value="82005">Mordekaiser Già Chuồn</option>
+                    <option value="25001">Morgana Lưu Đày</option>
+                    <option value="25002">Morgana Nướng Bánh</option>
+                    <option value="25003">Morgana Người Máy</option>
+                    <option value="25004">Morgana Gai Đen</option>
+                    <option value="25005">Morgana Oan Hồn Cô Dâu</option>
+                    <option value="25006">Morgana Vinh Quang</option>
+                    <option value="25010">Morgana Nguyệt Hồn</option>
+                    <option value="25011">Morgana Phù Thủy</option>
+                    <option value="25017">Morgana Khổng Tước Hoàng Hậu</option>
+                    <option value="267001">Nami Tiểu Long Ngư</option>
+                    <option value="267002">Nami Thủy Thần</option>
+                    <option value="267003">Nami Lốt Urf</option>
+                    <option value="267007">Nami Biển Sâu</option>
+                    <option value="267008">SKT T1 Nami</option>
+                    <option value="267009">Nami Siêu Máy Tính</option>
+                    <option value="267015">Nami Thủy Hoa Tiên Tử</option>
+                    <option value="75001">Nasus Ngân Hà</option>
+                    <option value="75002">Nasus Pha-ra-ông</option>
+                    <option value="75003">Nasus Hiệp Sĩ Đen</option>
+                    <option value="75004">Riot K-9 Nasus</option>
+                    <option value="75005">Nasus Địa Ngục</option>
+                    <option value="75006">Nasus Đại Công Tước</option>
+                    <option value="75010">Nasus Hung Thần</option>
+                    <option value="75011">Nasus Mậu Tuất</option>
+                    <option value="111001">Nautilus Vực Thẳm</option>
+                    <option value="111002">Nautilus Tàu Ngầm</option>
+                    <option value="111003">Nautilus Phi Hành Gia</option>
+                    <option value="111004">Nautilus Tổ Đội Quản Ngục</option>
+                    <option value="111005">Nautilus Hung Thần</option>
+                    <option value="518001">Neeko Mùa Đông Kỳ Diệu</option>
+                    <option value="518010">Neeko Vệ Binh Tinh Tú</option>
+                    <option value="518011">Neeko Vệ Binh Tinh Tú - Hàng Hiệu</option>
+                    <option value="76001">Nidalee Thỏ Tuyết</option>
+                    <option value="76002">Nidalee Báo Đốm</option>
+                    <option value="76003">Nidalee Người Hầu</option>
+                    <option value="76004">Nidalee Pha-ra-ông</option>
+                    <option value="76005">Nidalee Phù Thủy</option>
+                    <option value="76006">Nidalee Thợ Săn</option>
+                    <option value="76007">Nidalee Loạn Thế Anh Hùng</option>
+                    <option value="76008">Nidalee Thách Đấu</option>
+                    <option value="76009">Nidalee Siêu Nhân Thiên Hà</option>
+                    <option value="76011">Nidalee Thần Sứ</option>
+                    <option value="56001">Nocturne Băng Giá</option>
+                    <option value="56002">Nocturne Hư Không</option>
+                    <option value="56003">Nocturne Tàn Bạo</option>
+                    <option value="56004">Nocturne Hồn Ma</option>
+                    <option value="56005">Nocturne Bất Diệt</option>
+                    <option value="56006">Nocturne Bóng Ma</option>
+                    <option value="56007">Nocturne Thần Rừng</option>
+                    <option value="20001">Nunu &amp; Willump Khỉ Đột</option>
+                    <option value="20002">Nunu &amp; Willump Công Xưởng</option>
+                    <option value="20003">Nunu &amp; Willump Mẫu Giáo</option>
+                    <option value="20004">Nunu &amp; Willump Máy</option>
+                    <option value="20005">Nunu &amp; Willump Hủy Diệt</option>
+                    <option value="20006">TPA Nunu &amp; Willump</option>
+                    <option value="20007">Nunu &amp; Willump Thây Ma</option>
+                    <option value="20008">Nunu &amp; Willump Hiệp Sĩ Giấy</option>
+                    <option value="2001">Olaf Kẻ Phản Diện</option>
+                    <option value="2002">Olaf Băng Giá</option>
+                    <option value="2003">Brolaf</option>
+                    <option value="2004">Pentakill Olaf</option>
+                    <option value="2005">Olaf Toán Cướp Hắc Ám</option>
+                    <option value="2006">Olaf Thái Thịt</option>
+                    <option value="2015">SKT T1 Olaf</option>
+                    <option value="2016">Olaf Đồ Long</option>
+                    <option value="61001">Orianna Gô-tích</option>
+                    <option value="61002">Orianna Ma Búp Bê</option>
+                    <option value="61003">Orianna Thép Gai</option>
+                    <option value="61004">TPA Orianna</option>
+                    <option value="61005">Orianna Mùa Đông Kỳ Diệu</option>
+                    <option value="61006">Orianna Quả Cầu Tình Ái</option>
+                    <option value="61007">Orianna Hắc Tinh</option>
+                    <option value="61008">Orianna Vinh Quang</option>
+                    <option value="516001">Ornn Thần Sấm</option>
+                    <option value="80001">Pantheon Myrmidon</option>
+                    <option value="80002">Pantheon Tàn Nhẫn</option>
+                    <option value="80003">Pantheon Perseus</option>
+                    <option value="80004">Pantheon Chiến Binh Thép</option>
+                    <option value="80005">Đại Đao Pantheon</option>
+                    <option value="80006">Pantheon Đồ Long</option>
+                    <option value="80007">Pantheon Thợ Săn Xác Sống</option>
+                    <option value="80008">Pantheon Nướng Bánh</option>
+                    <option value="78001">Poppy Noxus</option>
+                    <option value="78002">Poppy Kẹo Mút</option>
+                    <option value="78003">Poppy Thợ Rèn</option>
+                    <option value="78004">Poppy Búp Bê</option>
+                    <option value="78005">Poppy Chiến Thần</option>
+                    <option value="78006">Poppy Búa Đỏ</option>
+                    <option value="78007">Poppy Vệ Binh Tinh Tú</option>
+                    <option value="78014">Poppy Cô Bé Tuần Lộc</option>
+                    <option value="78015">Poppy Công Nghệ</option>
+                    <option value="555001">Pyke Hồn Ma Sa Mạc</option>
+                    <option value="555009">Pyke Huyết Nguyệt</option>
+                    <option value="555016">SIÊU PHẨM: Pyke</option>
+                    <option value="246001">Qiyana Trùm Phụ</option>
+                    <option value="246002">True Damage Qiyana</option>
+                    <option value="246010">True Damage Qiyana - Hàng Hiệu</option>
+                    <option value="133001">Quinn Phượng Hoàng</option>
+                    <option value="133002">Quinn Do Thám</option>
+                    <option value="133003">Quinn Hải Tặc</option>
+                    <option value="133004">Quinn Mũi Tên Tình Ái</option>
+                    <option value="497001">Rakan Bình Minh Vũ Trụ</option>
+                    <option value="497002">Rakan Uyên Ương</option>
+                    <option value="497003">SSG Rakan</option>
+                    <option value="497004">iG Rakan</option>
+                    <option value="497005">Rakan Vệ Binh Tinh Tú</option>
+                    <option value="33001">Vua Rammus</option>
+                    <option value="33002">Rammus Nhôm</option>
+                    <option value="33003">Rammus Nham Thạch</option>
+                    <option value="33004">Rammus Freljord </option>
+                    <option value="33005">Ninja Rammus</option>
+                    <option value="33006">Rammus Giả Kim</option>
+                    <option value="33007">Rammus Vệ Binh Sa Mạc</option>
+                    <option value="33008">Rammus Hậu Vệ</option>
+                    <option value="33016">Rammus Công Nghệ</option>
+                    <option value="421001">Rek&#039;Sai Bất Diệt</option>
+                    <option value="421002">Rek&#039;Sai Tiệc Bể Bơi</option>
+                    <option value="58001">Renekton Ngân Hà</option>
+                    <option value="58002">Renekton Cao Bồi</option>
+                    <option value="58003">Renekton Huyết Nộ</option>
+                    <option value="58004">Renekton Chiến Tranh Cổ Ngữ</option>
+                    <option value="58005">Renekton Hủy Diệt</option>
+                    <option value="58006">Renekton Tiệc Bể Bơi</option>
+                    <option value="58007">Renekton Thời Tiền Sử</option>
+                    <option value="58008">SKT T1 Renekton</option>
+                    <option value="58009">Renekton Đồ Chơi</option>
+                    <option value="58017">Renekton Công Nghệ</option>
+                    <option value="107001">Rengar Thợ Săn</option>
+                    <option value="107002">Rengar Thợ Săn Bóng Đêm</option>
+                    <option value="107003">SSW Rengar</option>
+                    <option value="107008">Rengar Máy Móc</option>
+                    <option value="107015">Rengar Hoàng Thượng</option>
+                    <option value="107023">Rengar Vệ Binh Sa Mạc</option>
+                    <option value="92001">Riven Chuộc Tội</option>
+                    <option value="92002">Riven Đặc Nhiệm Đỏ</option>
+                    <option value="92003">Riven Thỏ Ngọc</option>
+                    <option value="92004">Riven Quán Quân</option>
+                    <option value="92005">Riven Long Kiếm</option>
+                    <option value="92006">Riven Giả Lập</option>
+                    <option value="92007">Riven Quán Quân 2016</option>
+                    <option value="92016">Riven Thần Kiếm</option>
+                    <option value="92018">Riven Vũ Khí Tối Thượng</option>
+                    <option value="92020">Ngạo Kiếm Riven</option>
+                    <option value="92022">Ngạo Kiếm Riven - Hàng Hiệu</option>
+                    <option value="68001">Rumble Bên Bờ Hồ</option>
+                    <option value="68002">Rumble Cướp Biển</option>
+                    <option value="68003">Rumble Siêu Nhân Thiên Hà</option>
+                    <option value="68004">Rumble Ông Trùm Xế Độ</option>
+                    <option value="13001">Ryze Niên Thiếu</option>
+                    <option value="13002">Ryze Thầy Mo</option>
+                    <option value="13003">Chú Ryze</option>
+                    <option value="13004">Ryze Vinh Quang</option>
+                    <option value="13005">Giáo Sư Ryze</option>
+                    <option value="13006">Ryze Xác Sống</option>
+                    <option value="13007">Ryze Pha Lê Đen</option>
+                    <option value="13008">Ryze Hải Tặc</option>
+                    <option value="13009">Ryze Pháp Sư Râu Trắng</option>
+                    <option value="13010">SKT T1 Ryze</option>
+                    <option value="13011">Ryze Quán Quân</option>
+                    <option value="13013">Ryze Vệ Binh Sa Mạc</option>
+                    <option value="113001">Sejuani Rừng Xanh</option>
+                    <option value="113002">Sejuani Kị Sĩ Đen</option>
+                    <option value="113003">Sejuani Truyền Thống</option>
+                    <option value="113004">Sejuani Biệt Đội Gấu</option>
+                    <option value="113005">Sejuani Kỵ Sĩ Poro</option>
+                    <option value="113006">Sejuani Thợ Săn Quái Thú</option>
+                    <option value="113007">Sejuani Kị Sĩ Bình Minh</option>
+                    <option value="113008">Sejuani Kỷ Hợi</option>
+                    <option value="235001">True Damage Senna</option>
+                    <option value="875001">Sett Loạn Thế Thần Binh</option>
+                    <option value="35001">Shaco Ở Xứ Thần Tiên</option>
+                    <option value="35002">Shaco Hoàng Gia</option>
+                    <option value="35003">Shaco Lính Chì</option>
+                    <option value="35004">Shaco Công Xưởng</option>
+                    <option value="35005">Shaco Tâm Thần</option>
+                    <option value="35006">Shaco Mặt Nạ</option>
+                    <option value="35007">Shaco Quân Bài Bí Ẩn</option>
+                    <option value="35008">Shaco Hắc Tinh</option>
+                    <option value="98001">Shen Băng Giá</option>
+                    <option value="98002">Shen Hoàng Kim Giáp</option>
+                    <option value="98003">Shen Ngoại Khoa</option>
+                    <option value="98004">Shen Huyết Nguyệt</option>
+                    <option value="98005">Shenmurai</option>
+                    <option value="98006">TPA Shen</option>
+                    <option value="98015">Shen Vũ Khí Tối Thượng</option>
+                    <option value="98016">Shen Hỏa Ngục</option>
+                    <option value="102001">Shyvana Vảy Sắt</option>
+                    <option value="102002">Shyvana Vuốt Rồng</option>
+                    <option value="102003">Shyvana Lửa Đen</option>
+                    <option value="102004">Shyvana Rồng Băng</option>
+                    <option value="102005">Shyvana Quán Quân</option>
+                    <option value="102006">Shyvana Siêu Nhân Thiên Hà</option>
+                    <option value="27001">Riot Squad Singed</option>
+                    <option value="27002">Singed Công Nghệ</option>
+                    <option value="27003">Singed Cưỡi Sóng</option>
+                    <option value="27004">Singed Bác Học Điên</option>
+                    <option value="27005">Singed Cường Hóa</option>
+                    <option value="27006">Singed Ngày Tuyết Rơi</option>
+                    <option value="27007">SSW Singed</option>
+                    <option value="27008">Singed Tai Họa</option>
+                    <option value="27009">Singed Ong Mật</option>
+                    <option value="14001">Sion Công Nghệ</option>
+                    <option value="14002">Sion Man Di</option>
+                    <option value="14003">Sion Tiều Phu</option>
+                    <option value="14004">Sion Chiến Thần</option>
+                    <option value="14005">Sion Người Máy Biến Hình</option>
+                    <option value="15001">Sivir Công Chúa Chiến Binh</option>
+                    <option value="15002">Spectacular Sivir</option>
+                    <option value="15003">Sivir Thợ Săn</option>
+                    <option value="15004">Sivir Tướng Cướp</option>
+                    <option value="15005">PAX Sivir</option>
+                    <option value="15006">Sivir Bão Tuyết</option>
+                    <option value="15007">Sivir Tổ Đội Quản Ngục</option>
+                    <option value="15008">Sivir Vinh Quang</option>
+                    <option value="15009">Neo PAX Sivir</option>
+                    <option value="15010">Sivir Pizza</option>
+                    <option value="15016">Sivir Huyết Nguyệt</option>
+                    <option value="72001">Skarner Sa Mạc</option>
+                    <option value="72002">Skarner Cổ Ngữ</option>
+                    <option value="72003">Skarner Cỗ Máy Chiến Đấu Alpha</option>
+                    <option value="72004">Skarner Vệ Binh Sa Mạc</option>
+                    <option value="37001">Sona Tiên Nữ</option>
+                    <option value="37002">Pentakill Sona</option>
+                    <option value="37003">Sona Đêm An Lành</option>
+                    <option value="37004">Sona Cổ Cầm</option>
+                    <option value="37005">Sona Giả Lập</option>
+                    <option value="37006">DJ Sona</option>
+                    <option value="37007">Sona Tiểu Tình Nhân</option>
+                    <option value="37009">Sona Tiên Tri Không Gian</option>
+                    <option value="16001">Soraka Rừng Xanh</option>
+                    <option value="16002">Soraka Khuê Nữ</option>
+                    <option value="16003">Soraka Thánh Nữ</option>
+                    <option value="16004">Soraka Tử Thần</option>
+                    <option value="16005">Soraka Hội Chuối Cả Nải</option>
+                    <option value="16006">Soraka Siêu Máy Tính</option>
+                    <option value="16007">Soraka Vệ Binh Tinh Tú</option>
+                    <option value="16008">Soraka Vệ Binh Pyjama</option>
+                    <option value="16009">Soraka Mùa Đông Kỳ Diệu</option>
+                    <option value="16015">Soraka Thần Sứ</option>
+                    <option value="16016">Soraka Ma Sứ</option>
+                    <option value="50001">Swain Bắc Cực</option>
+                    <option value="50002">Swain Cướp Biển</option>
+                    <option value="50003">Swain Bạo Chúa</option>
+                    <option value="50004">Swain Ngọa Long</option>
+                    <option value="50011">Swain Công Nghệ</option>
+                    <option value="517001">Sylas Nguyệt Hồn</option>
+                    <option value="517008">Freljord Sylas</option>
+                    <option value="134001">Syndra Công Lí</option>
+                    <option value="134002">Syndra Thủy Tộc Atlantis</option>
+                    <option value="134003">Syndra Đầm Rô</option>
+                    <option value="134004">Syndra Ngày Tuyết Rơi</option>
+                    <option value="134005">SKT T1 Syndra</option>
+                    <option value="134006">Syndra Vệ Binh Tinh Tú</option>
+                    <option value="223001">Tahm Kench Vua Đầu Bếp</option>
+                    <option value="223002">Tahm Kench Urf</option>
+                    <option value="223003">Tahm Kench Thần Tài</option>
+                    <option value="163001">Taliyah Freljord</option>
+                    <option value="163002">SSG Taliyah</option>
+                    <option value="91001">Talon Ngoài Vòng Pháp Luật</option>
+                    <option value="91002">Talon Đặc Nhiệm Đỏ</option>
+                    <option value="91003">Talon Long Kiếm</option>
+                    <option value="91004">SSW Talon</option>
+                    <option value="91005">Talon Huyết Nguyệt</option>
+                    <option value="91012">Talon Huyền Kiếm</option>
+                    <option value="44001">Taric Lục Bảo</option>
+                    <option value="44002">Taric Hồng Ngọc</option>
+                    <option value="44003">Taric Huyết Ngọc</option>
+                    <option value="44004">Taric Tiệc Bể Bơi</option>
+                    <option value="17001">Teemo Yêu Tinh Giáng Sinh</option>
+                    <option value="17002">Teemo Tình Báo</option>
+                    <option value="17003">Teemo Hướng Đạo Sinh</option>
+                    <option value="17004">Teemo Phi Hành Gia</option>
+                    <option value="17005">Teemo Thỏ Phục Sinh</option>
+                    <option value="17006">Siêu Nhân Teemo</option>
+                    <option value="17007">Teemo Gấu Trúc</option>
+                    <option value="17008">Teemo Biệt Đội Omega</option>
+                    <option value="17014">Teemo Tiểu Quỷ</option>
+                    <option value="17018">Beemo</option>
+                    <option value="412001">Thresh Nỗi Sợ Sâu Thẳm</option>
+                    <option value="412002">Thresh Quán Quân</option>
+                    <option value="412003">Thresh Huyết Nguyệt</option>
+                    <option value="412004">SSW Thresh</option>
+                    <option value="412005">Thresh Hắc Tinh</option>
+                    <option value="412006">Thresh Cao Bồi</option>
+                    <option value="412013">Thresh Vũ Khí Tối Thượng</option>
+                    <option value="412014">Thresh Vũ Khí Tối Thượng - Hàng Hiệu</option>
+                    <option value="18001">Riot Girl Tristana</option>
+                    <option value="18002">Tristana Yêu Tinh Giáng Sinh</option>
+                    <option value="18003">Tristana Lính Cứu Hỏa</option>
+                    <option value="18004">Tristana Du Kich</option>
+                    <option value="18005">Tristana Cướp Biển</option>
+                    <option value="18006">Tristana Hỏa Tiễn</option>
+                    <option value="18010">Tristana Luyện Rồng</option>
+                    <option value="18011">Tristana Phù Thủy</option>
+                    <option value="18012">Tristana Biệt Đội Omega</option>
+                    <option value="18024">Tristana Tiểu Quỷ</option>
+                    <option value="48001">Trundle Bóng Chày</option>
+                    <option value="48002">Trundle Bãi Rác</option>
+                    <option value="48003">Trundle Truyền Thống</option>
+                    <option value="48004">Trundle Bảo An</option>
+                    <option value="48005">Trundle Hung Thần</option>
+                    <option value="48006">Trundle Đồ Long</option>
+                    <option value="23001">Tryndamere Sơn Cước</option>
+                    <option value="23002">Tryndamere Quốc Vương</option>
+                    <option value="23003">Tryndamere Viking</option>
+                    <option value="23004">Tryndamere Quỷ Kiếm</option>
+                    <option value="23005">Tryndamere Thổ Nhĩ Kỳ</option>
+                    <option value="23006">Tryndamere Quan Vũ</option>
+                    <option value="23007">Tryndamere Ác Mộng</option>
+                    <option value="23008">Tryndamere Thợ Săn Quái Thú</option>
+                    <option value="23009">Tryndamere Vũ Khí Hóa Học</option>
+                    <option value="4001">PAX Twisted Fate</option>
+                    <option value="4002">Twisted Fate Bồi cơ</option>
+                    <option value="4003">Twisted Fate Ảo Thuật Sư</option>
+                    <option value="4004">Twisted Fate Tango</option>
+                    <option value="4005">Twisted Fate Cao Bồi</option>
+                    <option value="4006">Twisted Fate Ngự Lâm Quân</option>
+                    <option value="4007">Twisted Fate Âm Phủ</option>
+                    <option value="4008">Twisted Fate Trọng Tài</option>
+                    <option value="4009">Twisted Fate Thời Niên Thiếu</option>
+                    <option value="4010">Twisted Fate Huyết Nguyệt</option>
+                    <option value="4011">Twisted Fate Vũ Khí Tối Thượng</option>
+                    <option value="29001">Twitch Chuột Chù</option>
+                    <option value="29002">Twitch Trượt Tuyết</option>
+                    <option value="29003">Twitch Trung Cổ</option>
+                    <option value="29004">Twitch Mafia</option>
+                    <option value="29005">Twitch Du Côn</option>
+                    <option value="29006">Twitch Móc Túi</option>
+                    <option value="29007">SSW Twitch</option>
+                    <option value="29008">Twitch Biệt Đội Omega</option>
+                    <option value="29012">Twitch Vua Xứ Tuyết</option>
+                    <option value="77001">Udyr Đai Đen</option>
+                    <option value="77002">Udyr Hoang Dã</option>
+                    <option value="77003">Udyr Tứ Linh Vệ Hồn</option>
+                    <option value="77004">Đâu Phải Udyr</option>
+                    <option value="77005">Udyr Sứ Giả Long Thần</option>
+                    <option value="6001">Urgot Cua Khổng Lồ</option>
+                    <option value="6002">Urgot Đồ Tể</option>
+                    <option value="6003">Urgot Cỗ Máy Chiến Đấu</option>
+                    <option value="6009">Urgot Cao Bồi</option>
+                    <option value="110001">Varus Pha Lê Độc</option>
+                    <option value="110002">Varus Hồ Quang</option>
+                    <option value="110003">Varus Đặc Vụ Bắc Cực</option>
+                    <option value="110004">Varus Mũi Tên Tình Ái</option>
+                    <option value="110005">Varus Cung Thủ Thần Tốc</option>
+                    <option value="110006">Varus Hắc Tinh</option>
+                    <option value="110007">Varus Chinh Phục</option>
+                    <option value="110009">Varus Hỏa Ngục</option>
+                    <option value="67001">Vayne Kẻ Phán Quyết</option>
+                    <option value="67002">Vayne Quý Tộc</option>
+                    <option value="67003">Vayne Đồ Long</option>
+                    <option value="67004">Vaynelentine</option>
+                    <option value="67005">SKT T1 Vayne</option>
+                    <option value="67006">Vayne Hồ Quang</option>
+                    <option value="67010">Vayne Đoạt Hồn</option>
+                    <option value="67011">SIÊU PHẨM: Vayne</option>
+                    <option value="67012">Vayne Tân Niên</option>
+                    <option value="67013">Vayne Tân Niên - Hàng Hiệu</option>
+                    <option value="45001">Veigar Pháp Sư</option>
+                    <option value="45002">Veigar Khúc Côn Cầu</option>
+                    <option value="45003">Veigar Râu Xám</option>
+                    <option value="45004">Veigar Quỷ Lùn</option>
+                    <option value="45005">Nam Tước Von Veigar</option>
+                    <option value="45006">Veigar Siêu Xấu Xa</option>
+                    <option value="45007">Veigar Santa Xấu Xa</option>
+                    <option value="45008">Veigar Trùm Cuối</option>
+                    <option value="45009">Veigar Biệt Đội Omega</option>
+                    <option value="45013">Veigar Thần Rừng</option>
+                    <option value="161001">Vel&#039;Koz Cỗ Máy Chiến Đấu</option>
+                    <option value="161002">Vel&#039;Koz Hồ Quang</option>
+                    <option value="161003">Đâu Phải Vel&#039;Koz</option>
+                    <option value="254001">Vi Găng Độ Neon</option>
+                    <option value="254002">Sĩ Quan Vi</option>
+                    <option value="254003">Vi Thanh Lịch</option>
+                    <option value="254004">Vi Ác Quỷ</option>
+                    <option value="254005">Vi Loạn Thế Anh Hùng</option>
+                    <option value="254011">SIÊU PHẨM: Vi</option>
+                    <option value="254012">Vi Tay Đấm Tình Ái</option>
+                    <option value="112001">Viktor Người Máy</option>
+                    <option value="112002">Viktor Mẫu Thử</option>
+                    <option value="112003">Viktor Kẻ Sáng Tạo</option>
+                    <option value="112004">Viktor Hội Tử Thần</option>
+                    <option value="8001">Bá Tước Vladimir</option>
+                    <option value="8002">Hầu Tước Vladimir</option>
+                    <option value="8003">Vladimir Ma Cà Rồng</option>
+                    <option value="8004">Vladimir Du Côn</option>
+                    <option value="8005">Chúa Tể Vladimir</option>
+                    <option value="8006">Vladimir Đoạt Hồn</option>
+                    <option value="8007">Vladimir Hội Trưởng Học Sinh</option>
+                    <option value="8008">Vladimir Hắc Thủy</option>
+                    <option value="8014">Vladimir Ma Sứ</option>
+                    <option value="106001">Volibear Thần Sấm</option>
+                    <option value="106002">Volibear Bắc Cực</option>
+                    <option value="106003">Volibear Vệ Quân Cổ Ngữ</option>
+                    <option value="106004">Volibear Cảnh Vệ Trưởng</option>
+                    <option value="106005">Volibear Đô Vật Sấm Sét</option>
+                    <option value="19001">Warwick Xám</option>
+                    <option value="19002">Warwick Con Heo Biển</option>
+                    <option value="19003">Warwick Bà Ngoại</option>
+                    <option value="19004">Warwick Sói Lãnh Nguyên</option>
+                    <option value="19005">Warwick Sói Điên</option>
+                    <option value="19006">Warwick Nanh Lửa</option>
+                    <option value="19007">Warwick Linh Cẩu</option>
+                    <option value="19008">Warwick Toán Cướp Hắc Ám</option>
+                    <option value="19009">Warwick Urf</option>
+                    <option value="19010">Warwick Mậu Tuất</option>
+                    <option value="19016">SIÊU PHẨM: Warwick</option>
+                    <option value="498001">Xayah Hoàng Hôn Vũ Trụ</option>
+                    <option value="498002">Xayah Uyên Ương</option>
+                    <option value="498003">SSG Xayah</option>
+                    <option value="498004">Xayah Vệ Binh Tinh Tú</option>
+                    <option value="101001">Xerath Cổ Ngữ</option>
+                    <option value="101002">Xerath Cỗ Máy Chiến Đấu</option>
+                    <option value="101003">Xerath Hủy Diệt</option>
+                    <option value="101004">Xerath Vệ Binh Sa Mạc</option>
+                    <option value="5001">Xin Zhao Biệt Kích</option>
+                    <option value="5002">Xin Zhao Hoàng Gia</option>
+                    <option value="5003">Xin Zhao Giác Đấu</option>
+                    <option value="5004">Xin Zhao Chiến Thần</option>
+                    <option value="5005">Xin Zhao Triệu Tử Long</option>
+                    <option value="5006">Xin Zhao Mật Vụ</option>
+                    <option value="5013">Xin Zhao Đồ Long</option>
+                    <option value="5020">Xin Zhao Hộ Vệ Vũ Trụ</option>
+                    <option value="157001">Yasuo Cao Bồi</option>
+                    <option value="157002">SIÊU PHẨM: Yasuo</option>
+                    <option value="157003">Yasuo Huyết Nguyệt</option>
+                    <option value="157009">Yasuo Ma Kiếm</option>
+                    <option value="157010">Yasuo Kiếm Khách Không Gian</option>
+                    <option value="157017">Yasuo Phản Diện</option>
+                    <option value="157018">True Damage Yasuo</option>
+                    <option value="83001">Yorick Đào Mỏ</option>
+                    <option value="83002">Pentakill Yorick</option>
+                    <option value="83003">Yorick Hồ Quang</option>
+                    <option value="83004">Yorick Hội &#039;Sen&#039; Hồng</option>
+                    <option value="350001">Yuumi Hiệu Trưởng Chiến Binh</option>
+                    <option value="154001">Zac Vũ Khí Đặc Chất</option>
+                    <option value="154002">Zac Tiệc Bể Bơi</option>
+                    <option value="154006">SKT T1 Zac</option>
+                    <option value="238001">Zed Lôi Kiếm</option>
+                    <option value="238002">SKT T1 Zed</option>
+                    <option value="238003">SIÊU PHẨM: Zed</option>
+                    <option value="238010">Zed Quán Quân</option>
+                    <option value="238011">Zed Hội Tử Thần</option>
+                    <option value="238013">Zed Tử Thần Không Gian</option>
+                    <option value="115001">Ziggs Bác Học Điên</option>
+                    <option value="115002">Thiếu Tá Ziggs</option>
+                    <option value="115003">Ziggs Tiệc Bể Bơi</option>
+                    <option value="115004">Ziggs Ngày Tuyết Rơi</option>
+                    <option value="115005">Ziggs Ma Pháp Đại Sư</option>
+                    <option value="115006">Ziggs Trùm Phụ</option>
+                    <option value="115007">Ziggs Kĩ Sư Không Gian</option>
+                    <option value="115014">Ziggs Bánh Ngọt</option>
+                    <option value="26001">Ông Già Zilean</option>
+                    <option value="26002">Zilean Bay Bổng</option>
+                    <option value="26003">Zilean Hoang Mạc Shurima</option>
+                    <option value="26004">Zilean Du Hành Thời Gian</option>
+                    <option value="26005">Zilean Huyết Nguyệt</option>
+                    <option value="26006">Zilean Bánh Ngọt</option>
+                    <option value="142001">Zoe Thần Đồng Công Nghệ</option>
+                    <option value="142002">Zoe Tiệc Bể Bơi</option>
+                    <option value="142009">Zoe Vệ Binh Tinh Tú</option>
+                    <option value="143001">Zyra Hỏa Mộc</option>
+                    <option value="143002">Zyra Quỷ Ám</option>
+                    <option value="143003">SKT T1 Zyra</option>
+                    <option value="143004">Zyra Mẹ Rồng</option>
+                </select>
+            </div>
+        </div>
+        <div id="account-content" class="ui grid wrap-item">
+
+        </div>
+        <div id="menu-content">
+
+        </div>
+
+    </section>
+
+    <section class="shopdaxuaHowtobuy">
+        <div class="ui grid">
+            <div class="sixteen wide mobile sixteen wide tablet nine wide computer column">
+                <div id="stepImages" class="howtobuy-image">
+                    <div class="animated delay-0.5s fadeInUp"><img class="stepImage" src="https://shopdaxua.vn/frontend/assets/imgs/1.png" alt="SERVICES.step1" title="SERVICES.step1">
+                    </div>
+                </div>
+            </div>
+            <div class="sixteen wide mobile sixteen wide tablet seven wide computer column">
+                <div class="step-title">
+                    Hướng Dẫn Mua Nick?
+                </div>
+                <div id="stepContent" class="step-content">
+                    <div class="step actived">
+                        <div class="number">1</div>
+                        <div class="text">Sử dụng bộ lọc để tìm kiếm Acc phù hợp</div>
+                    </div>
+                    <div class="step">
+                        <div class="number">2</div>
+                        <div class="text">Sau khi tìm thấy Acc phù hợp , ấn vào Xem Thêm để xem thông tin chi tiết</div>
+                    </div>
+                    <div class="step">
+                        <div class="number">3</div>
+                        <div class="text">Ấn nút Mua Ngay sau đó chọn phương thức thanh toán phù hợp</div>
+                    </div>
+                    <div class="step">
+                        <div class="number">4</div>
+                        <div class="text"> Sau khi thanh toán thành công , tài khoản và mật khẩu sẽ hiện ở lịch sử mua acc!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="login-modal" class="ui modal">
+        <i id="modal-close" class="fas fa-times close"></i>
+        <!-- <div class="header">Header</div> -->
+        <div class="content">
+            <div class="login">
+                <div class="login-title">
+                    <i class="fas fa-user-check"></i>
+                    <span>Đăng Nhập</span>
+                </div>
+                <div class="login-content">
+                    <div class="login-label">
+                        Email *
+                    </div>
+                    <div class="ui input">
+                        <input type="text" id="email">
+                    </div>
+                    <div class="login-label">
+                        Mật Khẩu *
+                    </div>
+                    <div class="ui input">
+                        <input type="password" id="password">
+                    </div>
+                    <div class="login-action">
+                        <a class="login-forget" href="#">
+                            Quên Mật Khẩu !
+                        </a>
+                        <div class="login-button">
+                            <button onclick="Login()" class="button-green">Đăng Nhập</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="register">
+                <div class="register-title">
+                    <i class="fas fa-user-check"></i>
+                    <span>Đăng Kí</span>
+                </div>
+                <div class="register-content">
+                    <button class="button-email" onclick="emailregister()">
+                        <i class="fas fa-envelope"></i> Đăng kí bằng Email
+                    </button>
+                    <div class="logo">
+                        <img src="https://shopdaxua.vn/frontend/assets/imgs/yasuo-hinh.png">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml: true,
+                version: 'v6.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat" attribution=setup_tool page_id="185237372059165" logged_in_greeting="Chào , Bạn cần giúp gì ạ ?" logged_out_greeting="Chào , Bạn cần giúp gì ạ ?">
+    </div>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '461967294662202');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=461967294662202&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46845965-15"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46845965-15');
+    </script>
+
+    <footer class="shopdaxuaFooter">
+        <div class="ui grid">
+            <div class="sixteen wide mobile ten wide computer column">
+                <div class="footer-content">
+                    <div class="logo">
+                        <img src="https://shopdaxua.vn/frontend/assets/imgs/yasuo-hinh.png">
+                    </div>
+                    <div class="term">
+                        <div class="copy">© 2020 ShopDaXua.VN - All Rights Reserved</div>
+                        <a href="#">Terms of use</a>
+                        <span class="divide">/</span>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://shopdaxua.vn/frontend/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://shopdaxua.vn/frontend/bower_components/semantic/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="https://shopdaxua.vn/frontend/bower_components/particles.js-master/particles.min.js"></script>
+    <script type="text/javascript" src="https://shopdaxua.vn/frontend/bower_components/toastr/toastr.min.js"></script>
+    <script src="https://shopdaxua.vn/backend/assets/js/AutoNumberic.js"></script>
+    <script type="text/javascript">
+        // lib jqeury
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        function Login() {
+
+            $.ajax({
+                url: 'https://shopdaxua.vn/login',
+                type: 'POST',
+                data: {
+                    password: $('#password').val(),
+                    email: $('#email').val(),
+                },
+                success: function(result) {
+                    if (result.type == 'success') {
+                        toastr.success(result.message, 'Thành Công!');
+                        location.reload();
+
+                    }
+                    if (result.type == 'error') {
+                        if (typeof result.message == 'string') {
+                            toastr.error(result.message, 'Lỗi');
+                        } else {
+                            var kq = "";
+                            for (i = 0; i < result.message.length; i++) {
+                                kq += result.message[i] + "<br>";
+                            }
+                            toastr.error(kq, 'Lỗi');
+                        }
+                    }
+                },
+            });
+        }
+
+        function Logout() {
+            $.ajax({
+                url: 'https://shopdaxua.vn/logout',
+                type: 'GET',
+                success: function(result) {
+                    if (result.type == 'success') {
+                        toastr.success(result.message, 'Thành Công!');
+                        location.reload();
+                    }
+                    if (result.type == 'error') {
+                        if (typeof result.message == 'string') {
+                            toastr.error(result.message, 'Lỗi');
+                        } else {
+                            var kq = "";
+                            for (i = 0; i < result.message.length; i++) {
+                                kq += result.message[i] + "<br>";
+                            }
+                            toastr.error(kq, 'Lỗi');
+                        }
+                    }
+                },
+            });
+        }
+
+        function Register() {
+            $.ajax({
+                url: 'https://shopdaxua.vn/register',
+                type: 'POST',
+                data: {
+                    password: $('#password').val(),
+                    repassword: $('#repassword').val(),
+                    email: $('#email').val(),
+                    phone: $('#phone').val(),
+                },
+                success: function(result) {
+                    if (result.type == 'success') {
+                        toastr.success(result.message, 'Thành Công!');
+                        setTimeout(function() {
+                            toastr.success('Vui lòng vào email để kích hoạt tài khoản', 'Thành Công!');
+                            modalback();
+                        }, 3000);
+
+                    }
+                    if (result.type == 'error') {
+                        if (typeof result.message == 'string') {
+                            toastr.error(result.message, 'Lỗi');
+                        } else {
+                            var kq = "";
+                            for (i = 0; i < result.message.length; i++) {
+                                kq += result.message[i] + "<br>";
+                            }
+                            toastr.error(kq, 'Lỗi');
+                        }
+                    }
+                },
+            });
+        }
+
+        $(".ui.dropdown").dropdown();
+
+        $(".ui.dropdown").dropdown({
+            clearable: true,
+            maxSelections: 5
+        });
+
+        // how to buy step
+        $(".step").on("click", function(e) {
+            $("#stepImages img").remove();
+            $(this)
+                .toggleClass("actived")
+                .siblings()
+                .removeClass("actived");
+            var so = $(this)
+                .children(".number")
+                .text();
+            $("#stepImages").prepend(
+                '<div class="animated delay-0.5s fadeInUp"><img class="stepImage" src="https://shopdaxua.vn/frontend/assets/imgs' + '/' +
+                so +
+                '.png" alt="SERVICES.step1" title="SERVICES.step1"></div>'
+            );
+        });
+
+        // mũi tên menu
+        document.getElementById("nav-select").addEventListener("mouseover", function() {
+            document
+                .getElementById("nav-updown")
+                .setAttribute("class", "fas fa-caret-up");
+        });
+
+        document.getElementById("nav-select").addEventListener("mouseout", function() {
+            document
+                .getElementById("nav-updown")
+                .setAttribute("class", "fas fa-caret-down");
+        });
+
+        function emailregister() {
+            var modal = document.getElementById("login-modal");
+            var content = `
+      <i id="modal-close" class="fas fa-times close"></i>
+      <div class="content animated fadeIn">
+            <div class="login" style="width: 100%;">
+                <div class="login-title">
+                    <i class="fas fa-user-check"></i>
+                    <span>Đăng Kí</span>
+                </div>
+                <div class="login-content">
+                    <div class="login-label">
+                        Email *
+                    </div>
+                    <div class="ui input">
+                        <input id="email" type="text">
+                    </div>
+                    <div class="login-label">
+                        Mật Khẩu *
+                    </div>
+                    <div class="ui input">
+                        <input id="password" type="password">
+                    </div>
+                    <div class="login-label">
+                        Nhập Lại Mật Khẩu *
+                    </div>
+                    <div class="ui input">
+                        <input id="repassword" type="password">
+                    </div>
+                     <div class="login-label">
+                        Nhập Số Điện Thoại , để nhận khuyến mại từ website *
+                    </div>
+                    <div class="ui input">
+                        <input id="phone" type="text">
+                    </div>
+
+                    <div class="login-action">
+                        <button class="button-green" onclick="modalback()">Quay Lại</button>
+                        <div class="login-button">
+                            <button onclick="Register()" class="button-green">Đăng Kí</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+  `;
+
+            modal.innerHTML = content;
+        }
+
+        function openmodal() {
+            $(".ui.labeled.icon.sidebar").sidebar("hide");
+            $('#login-modal').modal("show");
+        }
+
+        function callregisterform() {
+            $(".ui.labeled.icon.sidebar").sidebar("hide");
+            $('#login-modal').modal("show");
+            emailregister();
+        }
+
+        function modalback() {
+            var modal = document.getElementById("login-modal");
+            var content = `
+      <i id="modal-close" class="fas fa-times close"></i>
+        <div class="content">
+            <div class="login">
+                <div class="login-title">
+                    <i class="fas fa-user-check"></i>
+                    <span>Đăng Nhập</span>
+                </div>
+                <div class="login-content">
+                    <div class="login-label">
+                        Email *
+                    </div>
+                    <div class="ui input">
+                        <input type="text" id="email">
+                    </div>
+                    <div class="login-label">
+                        Mật Khẩu *
+                    </div>
+                    <div class="ui input">
+                        <input type="password" id="password">
+                    </div>
+                    <div class="login-action">
+                        <a class="login-forget" href="#">
+                            Quên Mật Khẩu !
+                        </a>
+                        <div class="login-button">
+                            <button onclick="Login()" class="button-green">Đăng Nhập</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="register">
+                <div class="register-title">
+                    <i class="fas fa-user-check"></i>
+                    <span>Đăng Kí</span>
+                </div>
+                <div class="register-content">
+                    <button class="button-email" onclick="emailregister()">
+                        <i class="fas fa-envelope"></i>
+                        Đăng kí bằng Email
+                    </button>
+                    <div class="logo">
+                        <img src="https://shopdaxua.vn/frontend/assets/imgs/yasuo-hinh.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+  `;
+            modal.innerHTML = content;
+
+        }
+
+        document.getElementById("mobile-area").addEventListener("click", function() {
+            $(".ui.labeled.icon.sidebar").sidebar("toggle");
+        });
+
+        function demo() {
+            toastr.info('Tính năng này sắp sửa ra mắt', 'Hmm');
+        }
+
+        $(document).on("keyup", "#password", function(e) {
+            // login bằng phím enter
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                Login();
+            }
+
+        })
+
+        toastr.options = {
+            "closeButton": true,
+        }
+    </script>
+
+    <script type="text/javascript">
+        let url_global = '';
+        var page = {};
+
+        function find_acc_base_id() {
+            let acc_id = document.getElementById('acc_id').value;
+            if (isNaN(acc_id)) {
+                toastr.error('Id phải là số', 'Lỗi');
+            } else {
+                window.open('https://shopdaxua.vn/account/' + acc_id, '_blank');
+            }
+        }
+
+        $('#rank').dropdown('setting', 'onChange', function(value) {
+
+            let url = new URL(url_global);
+            url.searchParams.set('rank', value);
+            url_global = url.href;
+
+            url.searchParams.set('page', 1);
+
+            renderHTML(url.href);
+
+        });
+
+        $('#price').dropdown('setting', 'onChange', function(value) {
+
+            let url = new URL(url_global);
+            url.searchParams.set('price', value);
+            url_global = url.href;
+            url.searchParams.set('page', 1);
+
+            renderHTML(url.href);
+
+        });
+
+        $('#champ').dropdown('setting', 'onChange', function(value) {
+
+            let url = new URL(url_global);
+            url.searchParams.set('champ', value);
+            url_global = url.href;
+            url.searchParams.set('page', 1);
+
+            renderHTML(url.href);
+
+        });
+
+        $('#skin').dropdown('setting', 'onChange', function(value) {
+
+            let url = new URL(url_global);
+            url.searchParams.set('skin', value);
+            url_global = url.href;
+            url.searchParams.set('page', 1);
+            renderHTML(url.href);
+
+        });
+        $('#khung').dropdown('setting', 'onChange', function(value) {
+
+            let url = new URL(url_global);
+            url.searchParams.set('khung', value);
+            url_global = url.href;
+            url.searchParams.set('page', 1);
+            renderHTML(url.href);
+
+        });
+
+        //
+        $('#other').dropdown('setting', 'onChange', function(value) {
+
+            let url = new URL(url_global);
+            url.searchParams.set('other', value);
+            url_global = url.href;
+            url.searchParams.set('page', 1);
+            renderHTML(url.href);
+
+        });
+
+        $('#clear').on('click', function() {
+
+            $(".ui.dropdown").dropdown("clear");
+            document.getElementById('acc_id').value = '';
+        });
+
+        ranks = {
+            1: 'Thách Đấu',
+            2: 'Đại Cao Thủ',
+            3: 'Cao Thủ',
+            4: 'Kim Cương I',
+            5: 'Kim Cương II',
+            6: 'Kim Cương III',
+            7: 'Kim Cương IV',
+            8: 'Bạch Kim I',
+            9: 'Bạch Kim II',
+            10: 'Bạch Kim III',
+            11: 'Bạch Kim IV',
+            12: 'Vàng I',
+            13: 'Vàng II',
+            14: 'Vàng III',
+            15: 'Vàng IV',
+            16: 'Bạc I',
+            17: 'Bạc II',
+            18: 'Bạc III',
+            19: 'Bạc IV',
+            20: 'Đồng I',
+            21: 'Đồng II',
+            22: 'Đồng III',
+            23: 'Đồng IV',
+            24: 'Sắt I',
+            25: 'Sắt II',
+            26: 'Sắt III',
+            27: 'Sắt IV',
+            28: 'Chưa Rank',
+        };
+
+        khungs = {
+            1: 'Khung Thách Đấu',
+            2: 'Khung Đại Cao Thủ',
+            3: 'Khung Cao Thủ',
+            4: 'Khung Kim Cương',
+            5: 'Khung Bạch Kim',
+            6: 'Khung Vàng',
+            7: 'Khung Bạc',
+            8: 'Khung Đồng',
+            9: 'Chưa Khung',
+
+        };
+
+        function get_image_from_rank(rankID) {
+            switch (rankID) {
+                case 1:
+                    return 'challenger';
+                case 2:
+                    return 'grandmaster';
+                case 3:
+                    return 'master';
+
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    return 'diamond';
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                    return 'platinum';
+                case 12:
+                case 13:
+                case 14:
+                case 15:
+                    return 'gold';
+                case 16:
+                case 17:
+                case 18:
+                case 19:
+                    return 'silver';
+                case 20:
+                case 21:
+                case 22:
+                case 23:
+                    return 'bronze';
+                case 24:
+                case 25:
+                case 26:
+                case 27:
+                    return 'iron';
+                case 28:
+                    return 'unranked';
+            }
+        }
+
+        function next_menu() {
+
+            let current_page = page['current_page'] + 1;
+            let last_page = page['last_page'];
+            if (current_page <= last_page) {
+                let url = new URL(url_global);
+                url.searchParams.set('page', current_page);
+                renderHTML(url.href);
+            }
+            let scroll_account = document.getElementById('account-content');
+            scroll_account.scrollIntoView();
+
+        }
+
+        function pre_menu() {
+
+            let current_page = page['current_page'];
+            let last_page = page['last_page'];
+            if (current_page > 1) {
+                let url = new URL(url_global);
+                url.searchParams.set('page', current_page - 1);
+                renderHTML(url.href);
+            }
+            let scroll_account = document.getElementById('account-content');
+            scroll_account.scrollIntoView();
+        }
+
+        function currentpage(event) {
+            let url = new URL(url_global);
+            url.searchParams.set('page', event.target.getAttribute('data-id'));
+            renderHTML(url.href);
+            let scroll_account = document.getElementById('account-content');
+            scroll_account.scrollIntoView();
+        }
+
+        function lastpage() {
+            let url = new URL(url_global);
+            url.searchParams.set('page', event.target.getAttribute('data-id'));
+            renderHTML(url.href);
+            let scroll_account = document.getElementById('account-content');
+            scroll_account.scrollIntoView();
+        }
+
+        function renderHTML(href) {
+
+            $.ajax({
+                url: href,
+                type: "GET",
+                // async: false,
+                success: function(result) {
+
+                    let menu_content = "";
+                    let total = result.total;
+                    let number_page = Math.floor(total / 12);
+                    current_page = result.current_page;
+                    last_page = result.last_page;
+                    page['current_page'] = result.current_page;
+                    page['last_page'] = result.last_page;
+
+                    if (number_page < 1) {
+
+                    } else if (number_page >= 1 && number_page <= 10) {
+                        let menu_item = '';
+                        for (let i = 0; i <= number_page; i++) {
+                            if (i + 1 == page['current_page']) {
+                                menu_item += `
+
+                            <a onclick="currentpage(event)" data-id=${i+1} class="item current_page">${i+1}</a>
+                            `;
+                            } else {
+                                menu_item += `
+
+                                <a onclick="currentpage(event)" data-id=${i+1} class="item">${i+1}</a>
+                            `;
+                            }
+                        }
+                        menu_content = `
+
+                        <div class="wrap-paginate">
+                                <div class="ui pagination menu">
+
+                                    ${menu_item}
+
+                                </div>
+                        </div>
+
+                    `;
+                    } else {
+                        let menu_item = '';
+
+                        for (let i = 0; i <= number_page; i++) {
+                            if (i < 4) {
+                                if (i + 1 == page['current_page']) {
+                                    menu_item += `
+
+                            <a onclick="currentpage(event)" data-id=${i+1} class="item current_page">${i+1}</a>
+                            `;
+                                } else {
+                                    menu_item += `
+
+                                    <a onclick="currentpage(event)" data-id=${i+1} class="item">${i+1}</a>
+                                `;
+                                }
+                            }
+                            if (i == 4) {
+                                menu_item += `
+
+                                <a class="icon item">
+                                      <i class="ellipsis horizontal icon"></i>
+                                </a>
+
+                            `;
+                            }
+                            if (last_page - i <= 3) {
+                                if (i == page['current_page']) {
+                                    menu_item += `
+
+                            <a onclick="currentpage(event)" data-id=${i} class="item current_page">${i}</a>
+                            `;
+                                } else {
+                                    menu_item += `
+
+                                    <a onclick="currentpage(event)" data-id=${i} class="item">${i}</a>
+                                `;
+                                }
+
+                            }
+                        }
+
+                        menu_content = `
+
+                        <div class="wrap-paginate">
+                                <div class="ui pagination menu">
+                                    <a onclick="pre_menu()" class="icon item">
+                                       <i class="left chevron icon"></i>
+                                    </a>
+                                    ${menu_item}
+                                    <a onclick="next_menu()" class="icon item">
+                                       <i class="right chevron icon"></i>
+                                    </a>
+                                </div>
+                        </div>
+
+                    `;
+                    }
+
+                    let account = result.data;
+                    let account_content = document.getElementById('account-content');
+                    let menu_contentid = document.getElementById('menu-content');
+                    let content = "";
+                    for (let i = 0; i < account.length; i++) {
+
+                        let rp = JSON.parse(account[i].others).rp;
+                        if (!rp) {
+                            rp = 0;
+                        }
+                        let img = get_image_from_rank(JSON.parse(account[i].others).rank);
+                        let rank = ranks[JSON.parse(account[i].others).rank];
+                        let khung = khungs[JSON.parse(account[i].others).khung];
+                        let khung_css = '';
+                        if (JSON.parse(account[i].others).khung < 6) {
+                            khung_css = '<span style="color:#debb5c;">' + khung + '</span>';
+                        } else {
+                            khung_css = khung;
+                        }
+
+                        let real_price = account[i].price;
+                        let atm_price = real_price - (real_price * 20 / 100);
+
+                        content += `
+                                 <div class="sixteen wide mobile eight wide tablet four wide computer column">
+                                    <div class="ui item">
+                                        <div class="item__header">
+                                            <img class="item__img" src="frontend/assets/imgs/rank/${img}.png">
+                                            <div class="item__text">
+                                                <div class="item__rank">
+
+                                                     ${rank}
+
+                                                </div>
+                                                <div class="item__type">
+                                                     Mã Số #${account[i].id}
+                                                </div>
+                                                <div class="item__session">
+                                                    Mùa Này
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item__body">
+                                            <div class="item__show">
+                                                <div class="item__left">
+                                                    <img src="frontend/assets/imgs/khung.png" class="item__icon" style="max-width: 30%;">
+                                                    <span class="item__left__text">Khung</span>
+                                                </div>
+                                                <div class="item__right">
+                                                    <span class="item__right__text">${khung_css}</span>
+                                                </div>
+                                            </div>
+                                            <div class="item__show">
+                                                <div class="item__left">
+                                                    <img src="frontend/assets/imgs/champ.png" class="item__icon" style="max-width:30%;">
+                                                    <span class="item__left__text">Tướng</span>
+                                                </div>
+                                                <div class="item__right">
+                                                    <span class="item__right__text">${JSON.parse(account[i].count_champs)}</span>
+                                                </div>
+                                            </div>
+                                            <div class="item__show">
+                                                <div class="item__left">
+                                                    <img src="frontend/assets/imgs/skin.png" class="item__icon" style="max-width: 20%;">
+                                                    <span class="item__left__text">Trang Phục</span>
+                                                </div>
+                                                <div class="item__right">
+                                                    <span class="item__right__text">${JSON.parse(account[i].count_skins)}</span>
+                                                </div>
+                                            </div>
+                                            <div class="item__hide" style="padding-top: 10px;">
+                                                <div class="item__left">
+                                                    <img src="frontend/assets/imgs/riot.png" class="item__icon">
+                                                    <span class="item__left__text">Riot Point</span>
+                                                </div>
+                                                <div class="item__right">
+                                                    <span class="item__right__text" style="color:#ed2331;">${rp}
+                                                  </span>
+                                                </div>
+                                            </div>
+                                            <div class="item__hide">
+                                                <div class="item__left">
+                                                    <img src="frontend/assets/imgs/ip.png" class="item__icon">
+                                                    <span class="item__left__text">IP</span>
+                                                </div>
+                                                <div class="item__right">
+                                                    <span class="item__right__text" style="color: #0acae5;">${JSON.parse(account[i].others).ip}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item__footer">
+                                            <div class="item__left">
+                                                <div style="font-size:14px;color: #40BDAB;margin-bottom: 5px;">${real_price.toLocaleString('it-IT')} Card</div>
+                                                <div style="font-size:15px;color: #debb5c;font-weight: bold;">
+                                                    <i class="money bill alternate outline icon"></i>
+                                                    ${atm_price.toLocaleString('it-IT')} ATM</div>
+                                            </div>
+                                            <div class="item__right">
+                                                <button onclick="window.open('/account/${account[i].id}','_blank')" class="button-vip">Xem Thêm</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                    `;
+                    }
+
+                    account_content.innerHTML = content;
+                    menu_contentid.innerHTML = menu_content;
+                    // render menu
+
+                    url_global = href;
+
+                    // if(result.type == 'success'){
+                    //         toastr.success(result.message, 'Thành Công!');
+
+                    //     }
+                    //     if(result.type == 'error'){
+                    //         if(typeof result.message == 'string'){
+                    //             toastr.error(result.message, 'Lỗi');
+                    //             if(result.message == "Bạn cần đăng nhập để nạp thẻ"){
+                    //               setTimeout(function(){
+                    //                   openmodal();
+                    //               }, 1000);
+                    //               // openmodal();
+                    //         }
+                    //     }else{
+                    //             var kq ="";
+                    //             for(i = 0; i < result.message.length ; i++){
+                    //                 kq += result.message[i] + "<br>";
+                    //             }
+                    //             toastr.error(kq, 'Lỗi');
+                    //     }
+                    // }
+
+                }
+            });
+
+        }
+        renderHTML("https://shopdaxua.vn/json");
+    </script>
+
+    <script type="text/javascript">
+    </script>
