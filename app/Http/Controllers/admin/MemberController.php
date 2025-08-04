@@ -47,10 +47,10 @@ class MemberController extends Controller
             $status = false;
             $id = $request->get('id');
             $moneyUpdate = $request->get('money');
-    
+            
             if (isset($id) && isset($moneyUpdate)) {
                 $userCurrent = UserClient::find($id);
-                $userCurrent->money = $request->money;
+                $userCurrent->money = $moneyUpdate;
                 $userCurrent->save();
                 $status = true;
                 $outputHtml = $this->outputHtmlUser($userCurrent, 2);
@@ -138,6 +138,9 @@ class MemberController extends Controller
                 <div>'. $userCurrent->name .'</div>
                     <div class="small text-muted">
                     <span>New</span> | Registered: '. $userCurrent->created_at .'</div>
+                </td>
+                <td>
+                    <div> '.$userCurrent->username.' </div>
                 </td>
                 <td class="text-center">
                         <strong>'. $userCurrent->uid .'</strong>

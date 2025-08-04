@@ -60,10 +60,10 @@
         </div>
     </div>
 @empty
-    <h1>Không có acc nào</h1>
+    <h1 style="color: white;">Không có acc nào</h1>
 @endforelse
 
-<div id="menu-content">
+<div id="menu-content" style="width: 100%;">
     <div class="wrap-paginate">
         {{ $accountList->links() }}
     </div>

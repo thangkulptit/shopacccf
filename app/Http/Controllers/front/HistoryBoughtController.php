@@ -23,10 +23,12 @@ class HistoryBoughtController extends Controller
             $user = Auth::guard('users_client')->user();
             $uid = $user->uid;
             $data['list'] = DB::table('history_boughts')
+            ->join('type_accounts', 'type_accounts.ta_id', '=', 'history_boughts.type_account')
             ->where('uid',$uid)
             ->get();
-            $data['list'] = Common::convertTypeAccountText($data['list']);
-                return view('frontend/history_boughts', $data);
+
+            // $data['list'] = Common::convertTypeAccountText($data['list']);
+            return view('frontend/history_boughts', $data);
         }
     }
 }

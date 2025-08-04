@@ -106,7 +106,7 @@ var content = `
                 </div>
 
                 <div class="login-action">
-                    <button class="button-green" onclick="modalback()">Quay Lại</button>
+                    <button class="button-green" onclick="modalback()">Vào trang Đăng Nhập</button>
                     <div class="login-button">
                         <button onclick="Register()" class="button-green">Đăng Kí</button>
                     </div>

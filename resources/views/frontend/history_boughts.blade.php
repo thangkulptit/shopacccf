@@ -55,11 +55,12 @@
                 @forelse ($list as $item)
                     <tr>
                         <td>{{$item->id}}</td>
-                        <td>{{$item->type_account}} #{{$item->id_acc}}</td>
+                        <td>{{$item->name}} #{{$item->id_acc}}</td>
                         <td>{{$item->username}}</td>
                         <td>{{$item->password}}</td>
                         <td>{{$item->password2}}</td>
                         <td>{{number_format($item->price)}}<sup>đ</sup></td>
+                        <td><button class="button-green">Xem bằng chứng</button></td>
                     </tr>
                 @empty
                     <tr>

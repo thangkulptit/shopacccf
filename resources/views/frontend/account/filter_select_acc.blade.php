@@ -57,28 +57,34 @@
             <div class="default text">Tất cả</div>
             <div class="menu">
                 <div class="item" data-value="<50k">
-                    0 - 50.000 đ
+                    0 - 50.000 VNĐ
                 </div>
                 <div class="item" data-value="50k-100k">
-                    50.000 đ - 100.000đ
+                    50.000 VNĐ - 100.000 VNĐ
                 </div>
                 <div class="item" data-value="100k-500k">
-                   100.000 đ - 500.000đ
+                   100.000 VNĐ - 500.000 VNĐ
                 </div>
-                <div class="item" data-value="1tr-5tr">
-                    1.000.000 đ - 5.000.000đ
+                <div class="item" data-value="500k-1tr">
+                   500.000 VNĐ - 1triệu VNĐ
+                </div>
+                <div class="item" data-value="1tr-3tr">
+                   1triệu VNĐ - 3triệu VNĐ
+                </div>
+                <div class="item" data-value="3tr-5tr">
+                    3triệu VNĐ - 5triệu VNĐ
                 </div>
                 <div class="item" data-value="5tr-10tr">
-                    5.000.000đ - 10.000.000đ
+                    5triệu VNĐ - 10triệu VNĐ
                 </div>
                 <div class="item" data-value="10tr-15tr">
-                    10.000.000đ - 15.000.000đ
+                    10triệu VNĐ - 15triệu VNĐ
                 </div>
                 <div class="item" data-value="15tr-20tr">
-                    15.000.000đ - 20.000.000đ
+                    15triệu VNĐ - 20triệu VNĐ
                 </div>
                 <div class="item" data-value=">20tr">
-                   20.000.000đ trở lên
+                   20triệu VNĐ trở lên
                 </div>
             </div>
         </div>

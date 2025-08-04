@@ -119,8 +119,16 @@ class HomeController extends Controller
                 $price1 = 100000;
                 $price2 = 500000;
             break;
-            case '1tr-5tr':
+            case '500k-1tr':
+                $price1 = 500000;
+                $price2 = 1000000;
+            break;
+            case '1tr-3tr':
                 $price1 = 1000000;
+                $price2 = 3000000;
+            break;
+            case '3tr-5tr':
+                $price1 = 3000000;
                 $price2 = 5000000;
             break;
             case '5tr-10tr':
@@ -613,6 +621,10 @@ class HomeController extends Controller
             $user->money = $user->money - $accCurrent->price;
             //luu vao database.
             $user->save();
+
+            //Update Account 
+            $accCurrent->status = 0;
+            $accCurrent->save();
 
             $history = new HistoryBought();
             $history->uid = $user->uid;
