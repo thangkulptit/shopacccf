@@ -709,7 +709,7 @@ a.ui.labels .active.label:hover {
             padding-right: 5px; } }
       .shopdaxuaHeader .navigation .navigation__left .select {
         cursor: pointer;
-        background: url("../img/gameSelector.png");
+        background: url("../images/gameSelector.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -973,7 +973,7 @@ a.ui.labels .active.label:hover {
       background-color: #202123;
       border-radius: 5px; }
       .shopdaxuaAccount .wrap-item .item .item__header {
-        background: url("../images/rank/kc-bg.png");
+        /* background: url("../images/rank/kc-bg.png"); */
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center; }

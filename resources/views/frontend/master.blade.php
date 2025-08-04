@@ -150,7 +150,7 @@
                     <h3 class="modal-title">@yield('title_h3_3')</h3>
                 </div>
                 <div class="modal-body">
-                    <p class="sa-popimg"><img src="/frontend/images/user.png" alt="@yield('title_h1')">
+                    <p class="sa-popimg"><img src="#" alt="@yield('title_h1')">
                     </p>
                 </div>
             </div>
@@ -187,19 +187,19 @@
                     <div class="game">
                         <ul class="game__list">
                             <li onclick="demo()" class="game__item"
-                                style="background-image: url('images/dota2-gameSelector.png');">
+                                >
                                 <div class="overlay">
                                     Cách Mua Acc
                                 </div>
                             </li>
                             <li onclick="demo()" class="game__item"
-                                style="background-image: url('images/csgo-gameSelector.png');">
+                                >
                                 <div class="overlay">
                                     Bảo Mật Tài Khoản
                                 </div>
                             </li>
                             <li onclick="demo()" class="game__item"
-                                style="background-image: url('images/ow-gameSelector.png');">
+                                >
                                 <div class="overlay">
                                     Hướng Dẫn Nạp Thẻ
                                 </div>
@@ -382,7 +382,7 @@
                         <img src="images/yasuo-hinh.png">
                     </div>
                     <div class="term">
-                        <div class="copy">© 2020 ShopDaXua.VN - All Rights Reserved</div>
+                        <div class="copy">© 2020 ShopCuong678.Com - All Rights Reserved</div>
                         <a href="#">Terms of use</a>
                         <span class="divide">/</span>
                         <a href="#">Privacy Policy</a>

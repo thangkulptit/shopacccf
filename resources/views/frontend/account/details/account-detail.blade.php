@@ -44,10 +44,10 @@
             <!-- Giới Thiệu -->
             <div class="accountDetail__wrap animated fadeInUp">
                 <div class="wrap-title">
-                    Rank <span style="color: #ffc154">{{$data_account->rank}}</span>,Tướng:
-                    <span style="color: #ffc154">{{$data_account->count_champs}}</span> , Trang phục :
+                    Account chuyên <span style="color: #ffc154">{{$data_account->vip_main}}</span>,Tên VIP:
+                    <span style="color: #ffc154">{{$data_account->vip_name}}</span> , Cấp độ VIP :
                     <span style="color: #ed2331">
-                        {{$data_account->count_skins}}
+                        {{$data_account->vip_level}}
                           </span>
                     {{-- <img src="https://78200a9983.vws.vegacdn.vn/frontend/assets/imgs/riot.png" alt=""> , IP :
                     <span style="color: #0acae5">10472</span>

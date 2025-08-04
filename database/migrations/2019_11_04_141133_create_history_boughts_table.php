@@ -22,6 +22,7 @@ class CreateHistoryBoughtsTable extends Migration
             $table->string('username');
             $table->string('password');
             $table->string('password2')->nullable();
+            $table->string('url_bangchung')->nullable();
             $table->Integer('price');
             $table->timestamps();
         });

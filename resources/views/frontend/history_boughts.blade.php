@@ -48,6 +48,7 @@
                 <th>Mật khẩu</th>
                 <th>Mật khẩu cấp 2</th>
                 <th>Giá</th>
+                <th>Bằng chứng</th>
               </tr>
           </thead>
           <tbody>
@@ -61,8 +62,8 @@
                         <td>{{number_format($item->price)}}<sup>đ</sup></td>
                     </tr>
                 @empty
-                    <tr style="font-size: 20px; font-weight: bold; text-align: center;">
-                        Chưa có cuộc giao dịch nào xảy ra
+                    <tr>
+                        <td>Chưa có cuộc giao dịch nào xảy ra ^^</td>
                     </tr>
                 @endforelse
           </tbody>

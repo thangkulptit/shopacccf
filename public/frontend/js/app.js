@@ -169,10 +169,6 @@ var content = `
                 <span>Đăng Kí</span>
             </div>
             <div class="register-content">
-                // <button class="button-email" onclick="emailregister()">
-                //     <i class="fas fa-envelope"></i>
-                //     Đăng kí bằng Email
-                // </button>
                 <div class="logo">
                     <img src="images/yasuo-hinh.png">
                 </div>
@@ -372,7 +368,8 @@ function logicRegister() {
                     toastr.error(res.msg, 'Failed');
                 } else {
                     toastr.success(res.msg);
-                    callregisterform();
+                    location.reload();
+                    // callregisterform();
                 }
             },
             error: function (res) {
@@ -587,3 +584,172 @@ function showPopupAcc(acc) {
     });
 }
 
+
+$(document).ready(function() {
+    // Khởi tạo dropdown
+    $('.ui.dropdown').dropdown();
+    
+    const type = $('#get-type-account').attr('data-type-filter');
+    
+    // Biến lưu trữ trạng thái tìm kiếm hiện tại
+    let currentSearchData = {
+        vip_level: '',
+        price: '',
+        sort: '',
+        vip_name: '',
+        id: '',
+        type: type
+    };
+    
+    // Khôi phục trạng thái từ URL khi load trang
+    restoreStateFromURL();
+    
+    // Xử lý sự kiện khi nhấn nút Tìm kiếm
+    $('#search').on('click', function() {
+        // Lấy giá trị từ các dropdown và input
+        const vipLevel = $('#vip_level').dropdown('get value') || '';
+        const priceRange = $('#price').dropdown('get value') || '';
+        const specialFilter = $('#sort').dropdown('get value') || '';
+        const vipName = $('#vip_name_input').val().trim();
+        const accId = $('#acc_id_input').val().trim();
+        
+        // Cập nhật trạng thái tìm kiếm hiện tại
+        currentSearchData = {
+            vip_level: vipLevel,
+            price: priceRange,
+            sort: specialFilter,
+            vip_name: vipName,
+            id: accId,
+            type: type
+        };
+        
+        loading('show');
+        fetch_data(currentSearchData, 1);
+    });
+    
+    // Xử lý sự kiện phân trang
+    $(document).on('click', '.ui.pagination.menu a', function(event) {
+        event.preventDefault();
+        loading('show');
+        let page = $(this).attr('href').split('page=')[1];
+        fetch_data(currentSearchData, page);
+    });
+    
+    // Hàm fetch data chung cho cả tìm kiếm và phân trang
+    function fetch_data(searchData, page = 1) {
+        ajaxSetup();
+        $.ajax({
+            type: 'POST',
+            url: "/account/load_account_list2?page=" + page,
+            data: searchData,
+            success: function(responseData) {
+                $('#account-content').html(responseData);
+                loading('hide');
+                
+                // Cập nhật URL với trạng thái hiện tại
+                updateURL(searchData, page);
+            },
+            error: function(error) {
+                toastr.error(error);
+                loading('hide');
+            }
+        });
+    }
+    
+    // Xử lý nút Clear
+    $('#clear').on('click', function() {
+        $('#vip_level').dropdown('clear');
+        $('#price').dropdown('clear');
+        $('#sort').dropdown('clear');
+        $('#vip_name_input').val('');
+        $('#acc_id_input').val('');
+        
+        // Reset trạng thái tìm kiếm
+        currentSearchData = {
+            vip_level: '',
+            price: '',
+            sort: '',
+            vip_name: '',
+            id: '',
+            type: type
+        };
+        
+        $('#search').click();
+    });
+    
+    // Hàm cập nhật URL với trạng thái hiện tại
+    function updateURL(searchData, page) {
+        const params = new URLSearchParams();
+        
+        // Thêm các tham số tìm kiếm vào URL
+        if (searchData.vip_level) params.append('vip_level', searchData.vip_level);
+        if (searchData.price) params.append('price', searchData.price);
+        if (searchData.sort) params.append('sort', searchData.sort);
+        if (searchData.vip_name) params.append('vip_name', searchData.vip_name);
+        if (searchData.id) params.append('id', searchData.id);
+        if (searchData.type) params.append('type', searchData.type);
+        if (page && page != 1) params.append('page', page);
+        
+        // Cập nhật URL mà không reload trang
+        const newURL = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+        window.history.pushState({searchData: searchData, page: page}, '', newURL);
+    }
+    
+    // Hàm khôi phục trạng thái từ URL
+    function restoreStateFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Khôi phục giá trị tìm kiếm
+        const vipLevel = urlParams.get('vip_level') || '';
+        const price = urlParams.get('price') || '';
+        const sort = urlParams.get('sort') || '';
+        const vipName = urlParams.get('vip_name') || '';
+        const accId = urlParams.get('id') || '';
+        const page = urlParams.get('page') || 1;
+        
+        // Cập nhật UI với giá trị từ URL
+        if (vipLevel) $('#vip_level').dropdown('set selected', vipLevel);
+        if (price) $('#price').dropdown('set selected', price);
+        if (sort) $('#sort').dropdown('set selected', sort);
+        if (vipName) $('#vip_name_input').val(vipName);
+        if (accId) $('#acc_id_input').val(accId);
+        
+        // Cập nhật trạng thái tìm kiếm hiện tại
+        currentSearchData = {
+            vip_level: vipLevel,
+            price: price,
+            sort: sort,
+            vip_name: vipName,
+            id: accId,
+            type: type
+        };
+        
+        // Nếu có tham số tìm kiếm trong URL, thực hiện tìm kiếm
+        if (vipLevel || price || sort || vipName || accId) {
+            loading('show');
+            fetch_data(currentSearchData, page);
+        }
+    }
+    
+    // Xử lý sự kiện back/forward của browser
+    window.addEventListener('popstate', function(event) {
+        if (event.state && event.state.searchData) {
+            currentSearchData = event.state.searchData;
+            const page = event.state.page || 1;
+            
+            // Cập nhật UI
+            $('#vip_level').dropdown('set selected', currentSearchData.vip_level);
+            $('#price').dropdown('set selected', currentSearchData.price);
+            $('#sort').dropdown('set selected', currentSearchData.sort);
+            $('#vip_name_input').val(currentSearchData.vip_name);
+            $('#acc_id_input').val(currentSearchData.id);
+            
+            // Fetch data với trạng thái đã lưu
+            loading('show');
+            fetch_data(currentSearchData, page);
+        } else {
+            // Khôi phục từ URL nếu không có state
+            restoreStateFromURL();
+        }
+    });
+});
