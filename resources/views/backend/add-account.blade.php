@@ -84,12 +84,12 @@
           </div>
           </div>
 
-          <div class="col-sm-4">
+          {{-- <div class="col-sm-4">
           <div class="form-group">
             <label for="url_bangchung">Upload Bằng Chứng</label>
             <input class="form-control" id="url_bangchung" value="{{isset($account->url_bangchung) ? $account->url_bangchung : ""}}" type="file"  name="url_bangchung" placeholder="URL bằng chứng" >
           </div>
-          </div>
+          </div> --}}
 
                     <div class="col-sm-4">
               <div class="form-group">

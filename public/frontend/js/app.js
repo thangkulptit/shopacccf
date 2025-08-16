@@ -53,10 +53,11 @@ $(this)
 var so = $(this)
 .children(".number")
 .text();
+
 $("#stepImages").prepend(
-'<div class="animated delay-0.5s fadeInUp"><img class="stepImage" src="images' + '/' +
+'<div class="animated delay-0.5s fadeInUp"><img class="stepImage" src="images' + '/huongdanmua/' +
   so +
-  '.png" alt="SERVICES.step1" title="SERVICES.step1"></div>'
+  '.jpg" alt="SERVICES.stepx" title="SERVICES.stepx"></div>'
 );
 });
 
