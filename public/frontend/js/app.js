@@ -54,10 +54,9 @@ var so = $(this)
 .children(".number")
 .text();
 
+const domain = window.location.href;
 $("#stepImages").prepend(
-'<div class="animated delay-0.5s fadeInUp"><img class="stepImage" src="images' + '/huongdanmua/' +
-  so +
-  '.jpg" alt="SERVICES.stepx" title="SERVICES.stepx"></div>'
+`<div class="animated delay-0.5s fadeInUp"><img class="stepImage" src="${domain}/images/huongdanmua/${so}.jpg" alt="SERVICES.stepx" title="SERVICES.stepx"></div>`
 );
 });
 
