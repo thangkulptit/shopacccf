@@ -17,7 +17,7 @@
                       @foreach ($accountlist as $rows)
                       <tr>
                         <td>{{ $rows->acc_id }}</td>
-                        <td>{{ $rows->type_account }}</td>
+                        <td>{{ $rows->type_account_name }}</td>
                         <td>{{ $rows->username }}</td>
                         <td>{{ $rows->password }}</td>
                         <td>{{ $rows->price }}</td>

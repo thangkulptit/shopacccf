@@ -87,7 +87,8 @@ Route::group(['namespace'=>'admin'], function(){
 
     Route::get('logout', 'HomeController@getLogout');
     Route::group(['prefix'=>'admin', 'middleware'=>'CheckLoggedOut'], function(){
-        Route::get('home', 'HomeController@getHome');
+        Route::get('home', 'NotificationController@index');
+        Route::post('home', 'NotificationController@update');
         Route::group(['prefix'=> 'account'], function(){
             Route::get('/', 'AccountRandomController@getAccount');
 

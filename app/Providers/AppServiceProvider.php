@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
+use App\Notification;
+
 
 
 
@@ -27,6 +29,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        View::composer('*', function ($view) {
+            $popup = Notification::where('is_active', true)->first();
+            $view->with('popup', $popup);
+        });
+
         $listName = ["Hoài Nam", "haivippro", "Quý Đôn", "quocruong66", "Hiệp Phát", "Mạnh Quân", "Thái Phong", "Hoàng Sơn", "Trường Sơn", "Thanh Sơn", "Ngọc Sơn", "tungprovip123", "Bá Tùng", "sonvip", "anhyeuem123", "tranminhhieu", "Xuân Tuấn", "Ðình Trung", "mai khanh hoa", "Hoài Trung", "Cường Thịnh", "giahuypham", "minhdat3", "Hùng Thịnh", "Duy Thiên", "hailongtran97", "Kỳ Thiên", "yeulandau", "Hạo Thiên", "bancuatao6", "anhhanhquan06", "Công Thành", "maikhanhdat", "Gia Linh", "Thanh Mai", "Tuệ Mẫn", "Kim Oanh", "Tú Uyên", "chanvcl3", "Diễm Phương", "Kim Liên", "Bảo Quyên", "Diễm My", "Tuệ Nhi", "Thục Quyên", "Kim Ánh", "Kim Tiền", "Lê Ca", "Thảo Ly", "Nguyệt Cát", "Quỳnh Chi", "Thu Trang", "Thu Hiền", "Thu Thảo", "Lan Anh", "Lan Chi", "Ngọc Hoa", "Bảo Ngọc", "Bảo Kim", "Đoan Trang", "Thanh Trúc", "Tuyết Vy", "Tường Vi", "Kim Ngân", "Thanh Trúc", "Thanh Thủy", "Quỳnh Chi", "Quỳnh Hương", "Cát Tường"];
         $price = ['150,000', '230,000', '350,000', '180,000đ','450,000','320,000','260,000','245,000', '160,000','220,000'];
         $dateTime = Date('H');

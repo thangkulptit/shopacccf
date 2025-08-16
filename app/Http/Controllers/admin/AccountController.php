@@ -9,6 +9,8 @@ use App\Models\TypeAccount;
 use App\Common\common;
 use Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+
 
 
 class AccountController extends Controller
@@ -26,17 +28,25 @@ class AccountController extends Controller
     }
 
     public function getAccount(){
-        $data['accountlist'] = Account::paginate(10);
+        $data['accountlist'] = DB::table('accounts')
+            ->join('type_accounts', 'accounts.type_account', '=', 'type_accounts.ta_id')
+            ->select('accounts.*', 'type_accounts.name as type_account_name')
+            ->paginate(10);
         $data['type_account'] = TypeAccount::get();
-        $data['accountlist'] = Common::convertTypeAccountText($data['accountlist']);
+
+
         return view('backend/account', $data);
     }
 
     public function fetchDataAccount(Request $request){
         if ($request->ajax()){
-            $data['accountlist'] = Account::paginate(10);
-            $data['accountlist'] = Common::convertTypeAccountText($data['accountlist']);
-            return view('backend/paginations/pagination_account', $data);
+            $data['accountlist'] = DB::table('accounts')
+                ->join('type_accounts', 'accounts.ta_id', '=', 'type_accounts.id')
+                ->select('accounts.*', 'type_accounts.name as type_account_name')
+                ->paginate(10);
+            $data['type_account'] = TypeAccount::get();
+
+            return view('backend/account', $data);
         }
     }
 

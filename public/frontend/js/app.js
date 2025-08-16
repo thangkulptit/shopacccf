@@ -530,7 +530,7 @@ function pushCardToServer(type, amount, seri, code) {
 }
 
 function showPopupAcc(acc) {
-    window.location.href="https://www.facebook.com/FanpageShopCuongNguyen678"
+    window.open("https://www.facebook.com/FanpageShopCuongNguyen678", "_blank");
     // swal({
     //     title: "Tài Khoản Số #" + acc,
     //     text: "Bạn có chắc chắn muốn giao dịch tài khoản này ?",
@@ -753,4 +753,34 @@ $(document).ready(function() {
             restoreStateFromURL();
         }
     });
+});
+
+
+swal({
+  title: "🔔 Thông Báo Mới 🔔",
+  content: {
+    element: "div",
+    attributes: {
+      innerHTML: `
+        <div style="text-align:left; font-size:16px; color: red;">
+          ❤️ <b style="background:yellow; color: red;">SHOP ACC NGUYỄN MINH CÔNG</b> ❤️<br><br>
+          📌 <span style="color:red;">THU MUA ACC GIÁ CAO - NHẬN TREO ACC - GDTG</span><br>
+          📌 Chơi chán quay đầu shop có <b>THU lại ACC</b> cho AE<br><br>
+          ☎️ <b>SDT / ZALO:</b> <span style="color:blue;">037 272 9422</span><br><br>
+          🏧 <b style="background:yellow;">CHỈ GIAO DỊCH DUY NHẤT 1 STK</b> 
+          <span style="color:blue;">BIDV: 590 545 9999</span><br>
+          <b style="color:red;">NGUYEN MINH CONG</b>
+        </div>
+      `
+    }
+  },
+  buttons: {
+    confirm: {
+      text: "OK",
+      value: true,
+      visible: true,
+      className: "button-green",
+      closeModal: true
+    }
+  }
 });

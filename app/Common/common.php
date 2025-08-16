@@ -12,7 +12,6 @@ class Common
         $this->common = $common;
     }
     public static function convertTypeAccountText($data) {
-        
         for($i = 0 ; $i < sizeof($data) ; $i++) {
             if ($data[$i]->type_account == 1) {
                 $data[$i]->type_account = 'Free Fire';

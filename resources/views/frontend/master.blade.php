@@ -456,7 +456,21 @@
   </div>
 
     <div hidden>@yield('keywords')</div>
+
+    @if(isset($popup) && $popup && $popup->is_active)
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        Swal.fire({
+            title: {!! json_encode($popup->title) !!},
+            html: {!! json_encode($popup->content) !!},
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#6c5ce7',
+        });
+    });
+    </script>
+@endif
 </body>
+
 {{-- <script src="js/bootstrap4.minn.js"></script> --}}
 
 <script type="text/javascript" src="lib/semantic/semantic.min.js"></script>
@@ -465,6 +479,7 @@
 <script type="text/javascript" src="js/lib/AutoNumberic.js"></script>
 <script type="text/javascript" src="js/lib/swiper.min.js"></script>
 <script type="text/javascript" src="js/lib/sweetalert.min.js"></script>
+
 <script type="text/javascript" src="js/app.js"></script>
 <script>
     loading('hide');
