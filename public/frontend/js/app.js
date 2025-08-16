@@ -54,7 +54,7 @@ var so = $(this)
 .children(".number")
 .text();
 
-const domain = window.location.href;
+const domain = window.location.origin;
 $("#stepImages").prepend(
 `<div class="animated delay-0.5s fadeInUp"><img class="stepImage" src="${domain}/images/huongdanmua/${so}.jpg" alt="SERVICES.stepx" title="SERVICES.stepx"></div>`
 );
