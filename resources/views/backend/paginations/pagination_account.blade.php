@@ -38,7 +38,7 @@
                   </tbody>
                 </table>
                 <nav>
-                    {{$accountlist->links()}}
+                    {{$accountlist->links('vendor.pagination.simple-bootstrap-4')}}
                 </nav>
               </div>
             </div>

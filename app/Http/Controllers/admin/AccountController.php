@@ -41,12 +41,12 @@ class AccountController extends Controller
     public function fetchDataAccount(Request $request){
         if ($request->ajax()){
             $data['accountlist'] = DB::table('accounts')
-                ->join('type_accounts', 'accounts.ta_id', '=', 'type_accounts.id')
-                ->select('accounts.*', 'type_accounts.name as type_account_name')
-                ->paginate(10);
+            ->join('type_accounts', 'accounts.type_account', '=', 'type_accounts.ta_id')
+            ->select('accounts.*', 'type_accounts.name as type_account_name')
+            ->paginate(10);
             $data['type_account'] = TypeAccount::get();
 
-            return view('backend/account', $data);
+            return view('backend/paginations/pagination_account', $data);
         }
     }
 
