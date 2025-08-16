@@ -293,11 +293,10 @@
                             <i class="home icon"></i>
                             Trang Chủ
                         </a>
-                        <a href="{{url('/nap-the.html')}}" class="item">
+                        <a href="https://www.facebook.com/FanpageShopCuongNguyen678" class="item">
                             <i class="block money icon"></i>
-                            Nạp Thẻ
+                           Liên hệ FB ADMIN
                         </a>
-
                         <a onclick="openmodal()" class="item">
                             <i class="sign-in icon"></i>
                             Đăng Nhập
