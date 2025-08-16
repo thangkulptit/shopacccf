@@ -1,7 +1,7 @@
 @extends('frontend.master')
-@section('title', 'Chi tiết acc liên minh')
-@section('description', 'Shop acc lmht của chúng tôi quý tụ những tài khoản liên minh huyền thoại cực chất, rẻ và uy tín,...')
-@section('keywords', 'shop acc lmht, shop lien minh, mua acc lmht, mua nick lol, mua acc uy tin')
+@section('title', 'Chi tiết acc đột kích')
+@section('description', 'Shop acc cf của chúng tôi quý tụ những tài khoản đột kích huyền thoại cực chất, rẻ và uy tín,...')
+@section('keywords', 'shop acc cf, shop lien minh, mua acc cf, mua nick cf, mua acc uy tin')
 @section('main')
 <section class="accountDetail">
     <div class="accountDetail__header">
@@ -10,7 +10,7 @@
                 Tài Khoản Mã Số #{{$data_account->acc_id}}
             </div>
             <div class="accountDetail__price">
-                {{number_format($data_account->price)}}đ
+                {{number_format($data_account->price)}} ATM
             </div>
             <div class="accountDetail__buy">
                 <button onclick="showPopupAcc({{$data_account->acc_id}});" class="button-buy">Mua Ngay</button>
@@ -57,7 +57,7 @@
                     <div class="wrap-intro">
                         <div class="wrap-img">
                             @foreach ($img_content as $imgSRC)
-                                    <img src="{{$imgSRC}}" alt="shop acc lmht uy tin gia re" title="shop acc lmht uy tin gia re">
+                                    <img src="{{$imgSRC}}" alt="shop acc cf uy tin gia re" title="shop acc cf uy tin gia re">
                             @endforeach
                         </div>
                     </div>

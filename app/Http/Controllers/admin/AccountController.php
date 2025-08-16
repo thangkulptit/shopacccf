@@ -150,7 +150,6 @@ class AccountController extends Controller
         //     $file->move($pathFile, $fileName);
         // }
        
-        // dd($fileName);
         $account = new Account();
         $account->type_account = $request->type_account;
         $account->username = $request->username;

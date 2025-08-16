@@ -44,14 +44,14 @@
             </div>
             <div class="item__footer">
                 <div class="item__left">
-                    <div style="font-size:14px;color: #40BDAB;margin-bottom: 5px;">
+                    <div style="font-size:14px;color: #debb5c;font-weight: bold;">
                         <i class="money bill alternate outline icon"></i>
-                        {{ number_format($item->price) }} CARD
+                        {{ number_format($item->price) }} ATM
                     </div>
-                    <div style="font-size:15px;color: #debb5c;font-weight: bold;">
+                    {{-- <div style="font-size:15px;color: #debb5c;font-weight: bold;">
                         <i class="money bill alternate outline icon"></i>
                         {{ number_format($item->price * 1.15) }} ATM
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="item__right">
                     <button onclick="event.stopPropagation(); showPopupAcc({{ $item->acc_id }})" class="button-green">Mua ngay</button>

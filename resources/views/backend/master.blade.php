@@ -1313,7 +1313,7 @@
       }
     </script>
     <!-- CoreUI and necessary plugins-->
-   
+   <script defer src="{{ asset('frontend/js/upload.js') }}" type="module"></script>
     <script src="theme/jquery/dist/jquery.min.js"></script>
     <script src="theme/popper.js/dist/umd/popper.min.js"></script>
     <script src="theme/bootstrap/dist/js/bootstrap.min.js"></script>
