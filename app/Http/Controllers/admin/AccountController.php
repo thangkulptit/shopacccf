@@ -31,7 +31,7 @@ class AccountController extends Controller
         $data['accountlist'] = DB::table('accounts')
             ->join('type_accounts', 'accounts.type_account', '=', 'type_accounts.ta_id')
             ->select('accounts.*', 'type_accounts.name as type_account_name')
-            ->paginate(10);
+            ->paginate(30);
         $data['type_account'] = TypeAccount::get();
 
 
@@ -43,7 +43,7 @@ class AccountController extends Controller
             $data['accountlist'] = DB::table('accounts')
             ->join('type_accounts', 'accounts.type_account', '=', 'type_accounts.ta_id')
             ->select('accounts.*', 'type_accounts.name as type_account_name')
-            ->paginate(10);
+            ->paginate(30);
             $data['type_account'] = TypeAccount::get();
 
             return view('backend/paginations/pagination_account', $data);
