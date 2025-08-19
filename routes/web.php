@@ -29,16 +29,14 @@ Route::group(['namespace'=>'Auth'], function(){
 Route::group(['namespace'=>'front'], function(){
     Route::group(['prefix'=>'/'], function(){
         Route::get('/', 'HomeController@getViewHome');
-        // Route::get('/', function(){
-        //     return redirect('/shop-acc-lmht.html');
-        // });
+        Route::get('/shop-acc-dot-kich.html', 'HomeController@getViewShopCF');
+
         //index
         Route::get('/huong-dan-mua-acc.html', 'HomeController@getViewSuggest');
         Route::get('/shop-acc-lmht.html', 'HomeController@getViewHome');
         Route::get('/shop-lien-quan.html', 'HomeController@getViewShopLQ');
         Route::get('/shop-acc-lol-han-quoc.html', 'HomeController@getViewShopLMHTKorea');
         Route::get('/shop-acc-free-fire.html', 'HomeController@getViewShopFreefine');
-        Route::get('/shop-acc-dot-kich.html', 'HomeController@getViewShopCF');
         Route::get('/shop-acc-pubg-pc.html', 'HomeController@getViewShopPubgPC');
         Route::get('/shop-acc-pubg-mobile.html', 'HomeController@getViewShopPubgMobile');
         Route::get('/shop-acc-fifa-online.html', 'HomeController@getViewShopFo4');

@@ -611,7 +611,7 @@ $(document).ready(function() {
         const vipLevel = $('#vip_level').dropdown('get value') || '';
         const priceRange = $('#price').dropdown('get value') || '';
         const specialFilter = $('#sort').dropdown('get value') || '';
-        const vipName = $('#vip_name_input').val().trim();
+        const vipName = $('#vip_name_input').val() || '';
         const accId = $('#acc_id_input').val().trim();
         
         // Cập nhật trạng thái tìm kiếm hiện tại

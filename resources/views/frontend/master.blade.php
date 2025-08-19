@@ -331,9 +331,9 @@
         </div>
     </header>
 
-    <div>
+    <section class="shopdaxuaAccount">
         @yield('main')
-    </div>
+    </section>
 
     <section class="shopdaxuaHowtobuy">
         <div class="ui grid">

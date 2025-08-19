@@ -7,7 +7,7 @@ class ImageUploadHandler {
         }
         this.config = {
             maxFileSize: 10 * 1024 * 1024, // 10MB
-            maxFiles: 50,
+            maxFiles: 80,
             convertToJpg: true,
             compressQuality: 0.4,
             jpgQuality: 0.4,
@@ -276,7 +276,7 @@ $(document).ready(function() {
     if (fileInput) {
         imageHandler = new ImageUploadHandler('file-input-hehe', {
             maxFileSize: 10 * 1024 * 1024,
-            maxFiles: 50,
+            maxFiles: 80,
             convertToJpg: true,
             compressQuality: 0.4,
             jpgQuality: 0.6,

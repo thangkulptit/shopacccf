@@ -56,14 +56,8 @@
             <i class="dropdown icon"></i>
             <div class="default text">Tất cả</div>
             <div class="menu">
-                <div class="item" data-value="<50k">
-                    0 - 50.000 VNĐ
-                </div>
-                <div class="item" data-value="50k-100k">
-                    50.000 VNĐ - 100.000 VNĐ
-                </div>
-                <div class="item" data-value="100k-500k">
-                   100.000 VNĐ - 500.000 VNĐ
+                <div class="item" data-value="0k-500k">
+                  0 VNĐ - 500.000 VNĐ
                 </div>
                 <div class="item" data-value="500k-1tr">
                    500.000 VNĐ - 1triệu VNĐ
@@ -77,14 +71,8 @@
                 <div class="item" data-value="5tr-10tr">
                     5triệu VNĐ - 10triệu VNĐ
                 </div>
-                <div class="item" data-value="10tr-15tr">
-                    10triệu VNĐ - 15triệu VNĐ
-                </div>
-                <div class="item" data-value="15tr-20tr">
-                    15triệu VNĐ - 20triệu VNĐ
-                </div>
-                <div class="item" data-value=">20tr">
-                   20triệu VNĐ trở lên
+                <div class="item" data-value="10tr>">
+                    10triệu VNĐ trở lên
                 </div>
             </div>
         </div>
@@ -111,14 +99,14 @@
             </div>
         </div>
     </div>
-    <div class="sixteen wide mobile sixteen wide tablet three wide computer column">
+    {{-- <div class="sixteen wide mobile sixteen wide tablet three wide computer column">
         <label class="label">Tìm theo tên vip</label>
         <div id="vip_name" class="ui fluid" >
             <div class="ui input" style="width: 100%;">
                 <input type="text" id="vip_name_input" placeholder="VD: shopcuong678">
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="sixteen wide mobile sixteen wide tablet three wide computer column">
         <label class="label">Tìm theo mã số</label>
@@ -129,7 +117,7 @@
         </div>
     </div>
 
-    <div class="sixteen wide mobile sixteen wide tablet three wide computer column">
+    <div class="sixteen wide mobile sixteen wide tablet three wide computer column" style="margin-top: 30px;">
         <button id="search" class="button-green">
             Tìm kiếm
         </button>
