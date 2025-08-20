@@ -28,6 +28,7 @@
       <div class="column">
         <div class="ui card" style="width: 100%;">
             <div class="image">
+                <img src="{{ asset('frontend/images/yasuo-hinh.png') }}" style="height: 32px; position: absolute; width: 28px; right: 2px; top: -8px;" alt="Card Image">
                 <img src="{{$item['bgr']}}" style="width: 100%; height: auto; object-fit: cover;" alt="Card Image">
             </div>
             <div class="content">

@@ -230,37 +230,37 @@ class HomeController extends Controller
                 'title' => 'Acc Đột Kích dưới 500k',
                 'link' => url('/shop-acc-dot-kich.html?price=0k-500k&type=1'),
                 'description' => 'Số account hiện có: '. $counts->range_0_500k,
-                'bgr' => asset('/images/siu_co.gif'),
+                'bgr' => asset('/images/sieu_co.gif'),
             ],
             [
                 'title' => 'Acc Đột Kích 500k - 1tr',
                 'link' => url('/shop-acc-dot-kich.html?price=500k-1tr&type=1'),
                 'description' => 'Số account hiện có: '. $counts->range_500k_1m,
-                'bgr' => asset('/images/siu_re.gif'),
+                'bgr' => asset('/images/sieu_re.gif'),
             ],
             [
                 'title' => 'Acc Đột Kích 1tr - 3tr',
                 'link' => url('/shop-acc-dot-kich.html?price=1tr-3tr&type=1'),
                 'description' => 'Số account hiện có: '. $counts->range_1m_3m,
-                'bgr' => asset('/images/siu_re.gif'),
+                'bgr' => asset('/images/sieu_re.gif'),
             ],
             [
                 'title' => 'Acc Đột Kích 3tr - 5tr',
                 'link' => url('/shop-acc-dot-kich.html?price=3tr-5tr&type=1'),
                 'description' => 'Số account hiện có: '. $counts->range_3m_5m,
-                'bgr' => asset('/images/siu_vip.gif'),
+                'bgr' => asset('/images/sieu_vip.gif'),
             ],
             [
                 'title' => 'Acc Đột Kích 5tr - 10tr',
                 'link' => url('/shop-acc-dot-kich.html?price=5tr-10tr&type=1'),
                 'description' => 'Số account hiện có: '. $counts->range_5m_10m,
-                'bgr' => asset('/images/siu_vip.gif'),
+                'bgr' => asset('/images/sieu_vip.gif'),
             ],
             [
                 'title' => 'Acc Đột Kích 10tr trở lên',
                 'link' => url('/shop-acc-dot-kich.html?price=10tr>&type=1'),
                 'description' => 'Số account hiện có: '. $counts->range_above_10m,
-                'bgr' => asset('/images/siu_vip.gif'),
+                'bgr' => asset('/images/sieu_vip.gif'),
             ],
         ];
 
